@@ -1,0 +1,34 @@
+[
+  {
+    "id": "world-war-simulator",
+    "title": "World War Simulator",
+    "description": "AI 국가들이 벌이는 대규모 전쟁 시뮬레이션 게임. 실시간 전략 게임으로 국가 간의 전투와 동맹을 관찰하며 즐길 수 있습니다.",
+    "category": "game",
+    "technologies": [
+      "Unity",
+      "C#",
+      "AI Simulation",
+      "Real-time Strategy"
+    ],
+    "liveUrl": "https://world-war-simulator.vercel.app/",
+    "featured": true,
+    "createdAt": "2024-01-15",
+    "githubUrl": ""
+  },
+  {
+    "id": "idle-rpg",
+    "title": "방치형 모험가 노트",
+    "description": "방치형 RPG 게임으로 캐릭터가 자동 성장하며 던전과 보스를 공략합니다. 장비 강화와 스킬 업그레이드를 통해 더 강해져보세요.",
+    "category": "game",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Game Logic",
+      "Progressive Web App"
+    ],
+    "liveUrl": "https://idle-rpg-one.vercel.app/",
+    "featured": true,
+    "createdAt": "2024-02-20",
+    "githubUrl": ""
+  }
+] 
