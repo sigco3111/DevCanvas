@@ -5,14 +5,24 @@
 ## 🎮 현재 프로젝트
 
 ### [World War Simulator](https://world-war-simulator.vercel.app/)
-AI 국가들이 벌이는 대규모 전쟁 시뮬레이션 게임. 실시간 전략 게임으로 국가 간의 전투와 동맹을 관찰하며 즐길 수 있습니다.
+🛡️ AI 국가들이 벌이는 대규모 전쟁 시뮬레이션 게임. 실시간 전략 게임으로 국가 간의 전투와 동맹을 관찰하며 즐길 수 있습니다.
 
 **기술 스택:** Unity, C#, AI Simulation, Real-time Strategy
 
 ### [방치형 모험가 노트](https://idle-rpg-one.vercel.app/)
-방치형 RPG 게임으로 캐릭터가 자동 성장하며 던전과 보스를 공략합니다. 장비 강화와 스킬 업그레이드를 통해 더 강해져보세요.
+📖 방치형 RPG 게임으로 캐릭터가 자동 성장하며 던전과 보스를 공략합니다. 장비 강화와 스킬 업그레이드를 통해 더 강해져보세요.
 
 **기술 스택:** React, TypeScript, Game Logic, Progressive Web App
+
+### [지구마블](https://geo-poly.vercel.app/)
+🌍 전 세계 도시를 무대로 한 부루마블 게임! 부동산을 구매하고 임대료를 받으며 경제적 승리를 목표로 하는 전략 보드게임입니다.
+
+**기술 스택:** React, TypeScript, Game Logic, Board Game Mechanics
+
+### [디지털 인생 게임](https://life-game-rho.vercel.app/)
+🎲 인생의 다양한 선택과 결과를 체험하는 디지털 보드게임. 직업 선택부터 인생의 중요한 순간들을 시뮬레이션하며 즐길 수 있습니다.
+
+**기술 스택:** React, TypeScript, Simulation, Interactive Storytelling
 
 ## 🚀 기술 스택
 
@@ -69,6 +79,8 @@ DevCanvas/
 - **부드러운 애니메이션**: 사용자 경험을 향상시키는 애니메이션 효과
 - **타입 안전성**: TypeScript로 구현된 완전한 타입 시스템
 - **성능 최적화**: React.memo와 최적화된 번들링
+- **프로젝트 썸네일**: 각 게임의 특성을 나타내는 시각적 아이콘
+- **개발자 친화적 디자인**: 코딩 심볼과 개발 도구 아이콘이 포함된 히어로 섹션
 
 ## 🎯 향후 계획
 
@@ -76,6 +88,8 @@ DevCanvas/
 - 카테고리별 필터링 기능
 - 검색 기능
 - 사용자 리뷰 시스템
+- 게임 스크린샷 갤러리
+- 플레이 통계 및 랭킹 시스템
 
 ## 📄 라이선스
 
@@ -86,5 +100,6 @@ MIT License
 프로젝트에 기여하고 싶으시다면 이슈를 생성하거나 풀 리퀘스트를 보내주세요!
 
 ---
+
 
 **DevCanvas** - 웹의 무한한 가능성을 탐험하세요 🚀 
