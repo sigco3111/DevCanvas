@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/index.ts","./src/components/header/index.tsx","./src/components/header/types.ts","./src/components/hero/index.tsx","./src/components/hero/types.ts","./src/types/index.ts","./src/types/portfolio.ts","./src/utils/portfolio.ts"],"version":"5.7.2"}

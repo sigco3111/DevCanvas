@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import type { HeroProps, CTAButton } from './types';
-
-/**
- * 기본 CTA 버튼 설정
- */
-const DEFAULT_CTA_BUTTONS: CTAButton[] = [
-  {
-    text: '프로젝트 둘러보기',
-    href: '#projects',
-    variant: 'primary',
-  },
-];
+import type { HeroProps } from './types';
 
 /**
  * DevCanvas 웹사이트의 Hero 섹션 컴포넌트
@@ -20,7 +9,6 @@ const Hero: React.FC<HeroProps> = React.memo(({
   title = 'DevCanvas',
   subtitle = '웹앱 & 웹게임 허브',
   description = '다양한 웹 애플리케이션과 게임을 한 곳에서 즐겨보세요. 창의적이고 재미있는 프로젝트들이 여러분을 기다립니다.',
-  ctaButtons = DEFAULT_CTA_BUTTONS,
   disableGradient = false,
   className = '',
 }) => {
@@ -38,34 +26,7 @@ const Hero: React.FC<HeroProps> = React.memo(({
     return () => clearTimeout(timer);
   }, []);
 
-  /**
-   * CTA 버튼 클릭 핸들러
-   * 스크롤 이동 또는 외부 링크 처리
-   */
-  const handleCTAClick = (button: CTAButton) => {
-    if (!button.external && button.href.startsWith('#')) {
-      const targetElement = document.querySelector(button.href);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-    }
-  };
 
-  /**
-   * CTA 버튼 스타일 클래스 생성
-   */
-  const getCTAButtonClasses = (variant: CTAButton['variant'] = 'primary') => {
-    const baseClasses = 'inline-flex items-center px-8 py-3 text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2';
-    
-    if (variant === 'primary') {
-      return `${baseClasses} bg-white text-blue-600 hover:bg-gray-50 shadow-lg hover:shadow-xl focus:ring-white`;
-    } else {
-      return `${baseClasses} bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 focus:ring-white`;
-    }
-  };
 
   return (
     <section 
