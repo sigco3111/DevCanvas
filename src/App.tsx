@@ -23,7 +23,7 @@ function App() {
                 프로젝트 둘러보기
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                다양한 웹 애플리케이션과 게임을 체험해보세요
+                다양한 자동진행 게임과 웹 애플리케이션을 체험해보세요
               </p>
             </div>
             
