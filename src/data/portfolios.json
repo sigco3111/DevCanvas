@@ -99,7 +99,7 @@
   },
   {
     "id": "royal-secretary",
-    "title": "Royal Secretary",
+    "title": "왕실 서기관: AI 에델바이스 보고서",
     "description": "👑 왕실 비서 시뮬레이션 게임. 궁정에서 비서로서 왕실의 일정과 의전을 관리해보세요. 다양한 궁정 인물들과 상호작용하세요.",
     "category": "경영",
     "technologies": [
@@ -111,7 +111,7 @@
     "featured": false,
     "createdAt": "2025-05-30",
     "updatedAt": "2025-05-30",
-    "githubUrl": "https://github.com/sigco3111/royal-secretary",
+    "githubUrl": "https://github.com/sigco3111/royal_secretary",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
@@ -119,9 +119,9 @@
   },
   {
     "id": "enterprise-ceo",
-    "title": "Enterprise CEO",
+    "title": "엔터프라이즈 CEO",
     "description": "💼 기업 CEO 경영 시뮬레이션. 회사의 경영 전략을 수립하고 글로벌 기업으로 성장시켜보세요. 경제 변동과 경쟁사에 대응하세요.",
-    "category": "보드게임",
+    "category": "경영",
     "technologies": [
       "React",
       "TypeScript",
@@ -131,6 +131,26 @@
     "featured": false,
     "createdAt": "2025-05-30",
     "updatedAt": "2025-05-30",
+    "githubUrl": "https://github.com/sigco3111/enterprise-ceo",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "TEST",
+    "title": "테스트트",
+    "description": "테스트, 테스트, 테스트, 테스트",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://enterprise-ceo.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-05-31",
+    "updatedAt": "2025-05-31",
     "githubUrl": "https://github.com/sigco3111/enterprise-ceo",
     "developmentTools": [
       "Google AI Studio",
