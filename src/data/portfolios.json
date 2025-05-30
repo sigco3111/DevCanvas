@@ -3,32 +3,138 @@
     "id": "world-war-simulator",
     "title": "World War Simulator",
     "description": "AI 국가들이 벌이는 대규모 전쟁 시뮬레이션 게임. 실시간 전략 게임으로 국가 간의 전투와 동맹을 관찰하며 즐길 수 있습니다.",
-    "category": "game",
+    "category": "전략",
     "technologies": [
-      "Unity",
-      "C#",
-      "AI Simulation",
-      "Real-time Strategy"
+      "React",
+      "TypeScript",
+      "D3.js"
     ],
     "liveUrl": "https://world-war-simulator.vercel.app/",
     "featured": true,
-    "createdAt": "2024-01-15",
-    "githubUrl": ""
+    "createdAt": "2025-05-23",
+    "updatedAt": "2025-05-28",
+    "githubUrl": "https://github.com/sigco3111/World_War_Simulator",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   },
   {
     "id": "idle-rpg",
     "title": "방치형 모험가 노트",
     "description": "방치형 RPG 게임으로 캐릭터가 자동 성장하며 던전과 보스를 공략합니다. 장비 강화와 스킬 업그레이드를 통해 더 강해져보세요.",
-    "category": "game",
+    "category": "RPG",
     "technologies": [
       "React",
-      "TypeScript",
-      "Game Logic",
-      "Progressive Web App"
+      "TypeScript"
     ],
     "liveUrl": "https://idle-rpg-one.vercel.app/",
     "featured": true,
-    "createdAt": "2024-02-20",
-    "githubUrl": ""
+    "createdAt": "2025-05-26",
+    "updatedAt": "2025-05-28",
+    "githubUrl": "https://github.com/sigco3111/Idle_RPG",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "tetris-am3d",
+    "title": "테트리스 AI 마스터 3D",
+    "description": "3D 테트리스 게임과 AI 플레이 모드를 즐겨보세요. 고전 게임의 현대적 재해석으로 새로운 경험을 제공합니다.",
+    "category": "퍼즐",
+    "technologies": [
+      "Three.js",
+      "TypeScript",
+      "Three.js"
+    ],
+    "liveUrl": "https://tetris-am3d-7k4p.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-05-29",
+    "updatedAt": "2025-05-29",
+    "githubUrl": "https://github.com/sigco3111/Tetris-am3d",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "geo-poly",
+    "title": "지구마블",
+    "description": "전 세계 도시를 무대로 한 부루마블 게임! 부동산을 구매하고 임대료를 받아보세요. 전략적인 투자로 부동산 제국을 건설하세요.",
+    "category": "보드게임",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "CSS 3D Transforms"
+    ],
+    "liveUrl": "https://geo-poly.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-05-27",
+    "updatedAt": "2025-05-28",
+    "githubUrl": "https://github.com/sigco3111/geoPoly",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "life-game",
+    "title": "디지털 인생 게임",
+    "description": "🎲 인생의 다양한 선택과 결과를 체험하는 디지털 보드게임. 다양한 직업과 생애 이벤트를 경험해보세요.",
+    "category": "보드게임",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://life-game-rho.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-05-28",
+    "updatedAt": "2025-05-28",
+    "githubUrl": "https://github.com/sigco3111/lifeGame",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "royal-secretary",
+    "title": "Royal Secretary",
+    "description": "👑 왕실 비서 시뮬레이션 게임. 궁정에서 비서로서 왕실의 일정과 의전을 관리해보세요. 다양한 궁정 인물들과 상호작용하세요.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://royal-secretary.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-05-30",
+    "updatedAt": "2025-05-30",
+    "githubUrl": "https://github.com/sigco3111/royal-secretary",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "enterprise-ceo",
+    "title": "Enterprise CEO",
+    "description": "💼 기업 CEO 경영 시뮬레이션. 회사의 경영 전략을 수립하고 글로벌 기업으로 성장시켜보세요. 경제 변동과 경쟁사에 대응하세요.",
+    "category": "보드게임",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://enterprise-ceo.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-05-30",
+    "updatedAt": "2025-05-30",
+    "githubUrl": "https://github.com/sigco3111/enterprise-ceo",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 

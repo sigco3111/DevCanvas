@@ -9,4 +9,7 @@ export type { HeaderProps, NavigationItem } from './Header/types';
 
 // Hero 컴포넌트
 export { default as Hero } from './Hero';
-export type { HeroProps, CTAButton } from './Hero/types'; 
+export type { HeroProps, CTAButton } from './Hero/types';
+
+// ProjectCard 컴포넌트
+export { default as ProjectCard } from './ProjectCard'; 

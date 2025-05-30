@@ -36,8 +36,14 @@ export interface PortfolioItem {
   /** 프로젝트 생성 날짜 */
   createdAt: string;
   
+  /** 프로젝트 업데이트 날짜 */
+  updatedAt?: string;
+  
   /** GitHub 저장소 URL (선택적) */
   githubUrl?: string;
+  
+  /** 개발 도구 */
+  developmentTools?: string[];
 }
 
 /**
