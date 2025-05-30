@@ -29,6 +29,16 @@
 
 **기술 스택:** React, TypeScript, Simulation, Interactive Storytelling
 
+### [Royal Secretary](https://royal-secretary.vercel.app/)
+👑 왕실 비서 시뮬레이션 게임. 궁정에서 비서로서 왕실의 일정과 의전을 관리하며 권력과 정치의 세계를 경험해보세요.
+
+**기술 스택:** React, TypeScript, State Management, Interactive UI
+
+### [Enterprise CEO](https://enterprise-ceo.vercel.app/)
+💼 기업 CEO 경영 시뮬레이션. 회사의 경영 전략을 수립하고, 인재를 채용하며, 시장에서 경쟁하여 글로벌 기업으로 성장시켜보세요.
+
+**기술 스택:** React, Redux, TypeScript, Business Simulation
+
 ## 🚀 기술 스택
 
 - **Frontend:** React 18.3.1, TypeScript 5.7.2
