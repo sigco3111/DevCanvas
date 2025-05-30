@@ -136,25 +136,5 @@
       "Google AI Studio",
       "Cursor"
     ]
-  },
-  {
-    "id": "TEST",
-    "title": "테스트트",
-    "description": "테스트, 테스트, 테스트, 테스트",
-    "category": "경영",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts"
-    ],
-    "liveUrl": "https://enterprise-ceo.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-05-31",
-    "updatedAt": "2025-05-31",
-    "githubUrl": "https://github.com/sigco3111/enterprise-ceo",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
   }
 ] 
