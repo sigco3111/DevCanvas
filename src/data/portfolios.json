@@ -136,5 +136,25 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "football-manager",
+    "title": "축구 클럽 매니저",
+    "description": "축구 클럽을 관리하며 훈련, 재정, 경기 운영 등 주요 결정을 내리고, 전략적인 선택과 자원 관리를 통해 리그 우승과 클럽의 성장을 목표로 합니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://football-club-self.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-02",
+    "updatedAt": "2025-06-02",
+    "githubUrl": "https://github.com/sigco3111/FootballClub",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
