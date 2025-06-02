@@ -156,5 +156,25 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "conver-format",
+    "title": "데이터 & 텍스트 변환기",
+    "description": "다양한 데이터 형식 변환 작업을 위한 다용도 웹 애플리케이션입니다. JSON, YAML, XML 간의 변환, Base64 인코딩/디코딩, URL 인코딩/디코딩, HTML 엔티티 처리, Unix 타임스탬프와 날짜/시간 변환, 색상 코드 변환, 텍스트 서식 지정 (들여쓰기, 축소, 줄 정렬 등), 대소문자 변경, 텍스트 카운팅, 정규식 테스트 및 대체 등 광범위한 기능을 제공합니다.",
+    "category": "앱",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://convert-format.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-02",
+    "updatedAt": "2025-06-02",
+    "githubUrl": "https://github.com/sigco3111/ConvertFormat",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 

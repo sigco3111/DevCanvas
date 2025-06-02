@@ -216,7 +216,7 @@ function App() {
                 <dl className="space-y-6">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">DevCanvas는 어떤 플랫폼인가요?</dt>
-                    <dd className="mt-2 text-gray-600 dark:text-gray-300">DevCanvas는 자동진행 게임과 웹 애플리케이션을 제공하는 플랫폼입니다. 사용자는 다양한 게임을 무료로 즐길 수 있습니다.</dd>
+                    <dd className="mt-2 text-gray-600 dark:text-gray-300">DevCanvas는 자동진행 게임과 웹 애플리케이션을 제공하는 플랫폼입니다. 사용자는 다양한 게임과 앱을 무료로 사용할 수 있고, 모든 프로젝트의 소스코드는 오픈되어 있습니다.</dd>
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">게임은 어떻게 플레이하나요?</dt>
