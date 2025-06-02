@@ -11,6 +11,7 @@ const Hero: React.FC<HeroProps> = React.memo(({
   description = '다양한 자동진행 게임과 웹 애플리케이션을 제공합니다.',
   disableGradient = false,
   className = '',
+  totalProjects,
 }) => {
   // 애니메이션을 위한 상태 관리
   const [isVisible, setIsVisible] = useState(false);
@@ -129,6 +130,17 @@ const Hero: React.FC<HeroProps> = React.memo(({
             {description}
           </p>
 
+          {/* 전체 프로젝트 개수 표시 */}
+          {totalProjects !== undefined && (
+            <div className={`mt-4 bg-white/20 backdrop-blur-sm rounded-lg py-2 px-4 inline-block transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className="flex items-center justify-center space-x-2">
+                <svg className="w-5 h-5 text-blue-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
+                </svg>
+                <span className="font-semibold text-white">현재 총 <span className="text-blue-200 font-bold">{totalProjects}</span>개의 프로젝트 제공 중</span>
+              </div>
+            </div>
+          )}
 
         </div>
 

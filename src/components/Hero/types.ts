@@ -35,4 +35,7 @@ export interface HeroProps extends BaseComponentProps {
   
   /** 배경 그라데이션 비활성화 */
   disableGradient?: boolean;
+  
+  /** 전체 프로젝트 개수 */
+  totalProjects?: number;
 } 

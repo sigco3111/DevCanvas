@@ -81,7 +81,7 @@ function App() {
         {/* 메인 콘텐츠 - 시맨틱 태그 강화 */}
         <main id="main-content">
           {/* Hero 섹션 - 홈과 프로젝트 소개를 통합 */}
-          <Hero />
+          <Hero totalProjects={portfolios.length} />
 
           {/* 프로젝트 섹션 */}
           <section id="projects" aria-labelledby="projects-heading" className="py-16 bg-white dark:bg-gray-800">
