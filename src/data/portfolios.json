@@ -164,8 +164,7 @@
     "category": "앱",
     "technologies": [
       "React",
-      "TypeScript",
-      "Recharts"
+      "TypeScript"
     ],
     "liveUrl": "https://convert-format.vercel.app/",
     "featured": false,
