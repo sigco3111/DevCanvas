@@ -215,5 +215,24 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "fireworks-master",
+    "title": "파이어웍스 마스터",
+    "description": "파이어웍스 마스터는 플레이어가 주어진 상황에 맞춰 다양한 재료를 조합하여 불꽃을 제작하고 발사하는 게임입니다. 심사위원이 플레이어의 불꽃을 평가하며, 더 높은 점수를 얻기 위해 창의적인 조합을 시도해보세요!",
+    "category": "퍼즐",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://fireworks-master-two.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-06-04",
+    "updatedAt": "2025-06-04",
+    "githubUrl": "https://github.com/sigco3111/FireworksMaster",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
