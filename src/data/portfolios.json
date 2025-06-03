@@ -84,7 +84,8 @@
     "category": "육성",
     "technologies": [
       "React",
-      "TypeScript"
+      "TypeScript",
+      "Recharts"
     ],
     "liveUrl": "https://champion-maker.vercel.app/",
     "featured": false,
@@ -202,7 +203,8 @@
     "category": "전략",
     "technologies": [
       "React",
-      "TypeScript"
+      "TypeScript",
+      "Recharts"
     ],
     "liveUrl": "https://kingdoms3-lite.vercel.app/",
     "featured": false,
