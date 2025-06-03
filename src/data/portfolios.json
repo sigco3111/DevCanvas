@@ -161,7 +161,7 @@
     "id": "conver-format",
     "title": "데이터 & 텍스트 변환기",
     "description": "다양한 데이터 형식 변환 작업을 위한 다용도 웹 애플리케이션입니다. JSON, YAML, XML 간의 변환, Base64 인코딩/디코딩, URL 인코딩/디코딩, HTML 엔티티 처리, Unix 타임스탬프와 날짜/시간 변환, 색상 코드 변환, 텍스트 서식 지정 (들여쓰기, 축소, 줄 정렬 등), 대소문자 변경, 텍스트 카운팅, 정규식 테스트 및 대체 등 광범위한 기능을 제공합니다.",
-    "category": "앱",
+    "category": "App",
     "technologies": [
       "React",
       "TypeScript"
@@ -180,7 +180,7 @@
     "id": "threekingdoms-lite",
     "title": "삼국지 Lite",
     "description": "삼국지 Lite는 조조, 유비, 손권, 원소 네 세력 중 하나를 선택하여 천하를 통일하는 것을 목표로 하는 텍스트 및 차트 기반 전략 게임입니다. 지역을 개발하고 자원을 관리하여 세력을 확장하세요.",
-    "category": "육성",
+    "category": "전략",
     "technologies": [
       "React",
       "TypeScript"
