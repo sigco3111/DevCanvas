@@ -1,5 +1,44 @@
 [
   {
+    "id": "conver-format",
+    "title": "데이터 & 텍스트 변환기",
+    "description": "다양한 데이터 형식 변환 작업을 위한 다용도 웹 애플리케이션입니다. JSON, YAML, XML 간의 변환, Base64 인코딩/디코딩, URL 인코딩/디코딩, HTML 엔티티 처리, Unix 타임스탬프와 날짜/시간 변환, 색상 코드 변환, 텍스트 서식 지정 (들여쓰기, 축소, 줄 정렬 등), 대소문자 변경, 텍스트 카운팅, 정규식 테스트 및 대체 등 광범위한 기능을 제공합니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://convert-format.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-02",
+    "updatedAt": "2025-06-02",
+    "githubUrl": "https://github.com/sigco3111/ConvertFormat",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "enterprise-ceo",
+    "title": "엔터프라이즈 CEO",
+    "description": "💼 기업 CEO 경영 시뮬레이션. 회사의 경영 전략을 수립하고 글로벌 기업으로 성장시켜보세요. 경제 변동과 경쟁사에 대응하세요.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://enterprise-ceo.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-05-30",
+    "updatedAt": "2025-05-30",
+    "githubUrl": "https://github.com/sigco3111/enterprise_ceo",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
     "id": "world-war-simulator",
     "title": "World War Simulator",
     "description": "AI 국가들이 벌이는 대규모 전쟁 시뮬레이션 게임. 실시간 전략 게임으로 국가 간의 전투와 동맹을 관찰하며 즐길 수 있습니다.",
@@ -39,20 +78,19 @@
     ]
   },
   {
-    "id": "tetris-am3d",
-    "title": "테트리스 AI 마스터 3D",
-    "description": "3D 테트리스 게임과 AI 플레이 모드를 즐겨보세요. 고전 게임의 현대적 재해석으로 새로운 경험을 제공합니다.",
-    "category": "퍼즐",
+    "id": "champion-maker",
+    "title": "챔피언 메이커",
+    "description": "복싱 선수를 육성하여 챔피언으로 만드는 게임입니다. 텍스트와 차트 기반으로 선수를 훈련시키고, 경기에 참여하여 최고의 자리에 오르세요.",
+    "category": "육성",
     "technologies": [
-      "Three.js",
-      "TypeScript",
-      "Three.js"
+      "React",
+      "TypeScript"
     ],
-    "liveUrl": "https://tetris-am3d-7k4p.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-05-29",
-    "updatedAt": "2025-05-29",
-    "githubUrl": "https://github.com/sigco3111/Tetris-am3d",
+    "liveUrl": "https://champion-maker.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-03",
+    "updatedAt": "2025-06-03",
+    "githubUrl": "https://github.com/sigco3111/ChampionMaker",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
@@ -73,6 +111,26 @@
     "createdAt": "2025-05-27",
     "updatedAt": "2025-05-28",
     "githubUrl": "https://github.com/sigco3111/geoPoly",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "tetris-am3d",
+    "title": "테트리스 AI 마스터 3D",
+    "description": "3D 테트리스 게임과 AI 플레이 모드를 즐겨보세요. 고전 게임의 현대적 재해석으로 새로운 경험을 제공합니다.",
+    "category": "퍼즐",
+    "technologies": [
+      "Three.js",
+      "TypeScript",
+      "Three.js"
+    ],
+    "liveUrl": "https://tetris-am3d-7k4p.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-05-29",
+    "updatedAt": "2025-05-29",
+    "githubUrl": "https://github.com/sigco3111/Tetris-am3d",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
@@ -116,27 +174,7 @@
       "Google AI Studio",
       "Cursor"
     ]
-  },
-  {
-    "id": "enterprise-ceo",
-    "title": "엔터프라이즈 CEO",
-    "description": "💼 기업 CEO 경영 시뮬레이션. 회사의 경영 전략을 수립하고 글로벌 기업으로 성장시켜보세요. 경제 변동과 경쟁사에 대응하세요.",
-    "category": "경영",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts"
-    ],
-    "liveUrl": "https://enterprise-ceo.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-05-30",
-    "updatedAt": "2025-05-30",
-    "githubUrl": "https://github.com/sigco3111/enterprise_ceo",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
+  },  
   {
     "id": "football-manager",
     "title": "축구 클럽 매니저",
@@ -156,26 +194,7 @@
       "Google AI Studio",
       "Cursor"
     ]
-  },
-  {
-    "id": "conver-format",
-    "title": "데이터 & 텍스트 변환기",
-    "description": "다양한 데이터 형식 변환 작업을 위한 다용도 웹 애플리케이션입니다. JSON, YAML, XML 간의 변환, Base64 인코딩/디코딩, URL 인코딩/디코딩, HTML 엔티티 처리, Unix 타임스탬프와 날짜/시간 변환, 색상 코드 변환, 텍스트 서식 지정 (들여쓰기, 축소, 줄 정렬 등), 대소문자 변경, 텍스트 카운팅, 정규식 테스트 및 대체 등 광범위한 기능을 제공합니다.",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript"
-    ],
-    "liveUrl": "https://convert-format.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-06-02",
-    "updatedAt": "2025-06-02",
-    "githubUrl": "https://github.com/sigco3111/ConvertFormat",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
+  },  
   {
     "id": "threekingdoms-lite",
     "title": "삼국지 Lite",
@@ -190,25 +209,6 @@
     "createdAt": "2025-06-03",
     "updatedAt": "2025-06-03",
     "githubUrl": "https://github.com/sigco3111/Kingdoms3Lite",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
-  {
-    "id": "champion-maker",
-    "title": "챔피언 메이커",
-    "description": "복싱 선수를 육성하여 챔피언으로 만드는 게임입니다. 텍스트와 차트 기반으로 선수를 훈련시키고, 경기에 참여하여 최고의 자리에 오르세요.",
-    "category": "육성",
-    "technologies": [
-      "React",
-      "TypeScript"
-    ],
-    "liveUrl": "https://champion-maker.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-06-03",
-    "updatedAt": "2025-06-03",
-    "githubUrl": "https://github.com/sigco3111/ChampionMaker",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
