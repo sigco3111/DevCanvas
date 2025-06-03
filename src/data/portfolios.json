@@ -175,5 +175,43 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "threekingdoms-lite",
+    "title": "삼국지 Lite",
+    "description": "삼국지 Lite는 조조, 유비, 손권, 원소 네 세력 중 하나를 선택하여 천하를 통일하는 것을 목표로 하는 텍스트 및 차트 기반 전략 게임입니다. 지역을 개발하고 자원을 관리하여 세력을 확장하세요.",
+    "category": "육성",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://kingdoms3-lite.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-03",
+    "updatedAt": "2025-06-03",
+    "githubUrl": "https://github.com/sigco3111/Kingdoms3Lite",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "champion-maker",
+    "title": "챔피언 메이커",
+    "description": "복싱 선수를 육성하여 챔피언으로 만드는 게임입니다. 텍스트와 차트 기반으로 선수를 훈련시키고, 경기에 참여하여 최고의 자리에 오르세요.",
+    "category": "육성",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://champion-maker.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-03",
+    "updatedAt": "2025-06-03",
+    "githubUrl": "https://github.com/sigco3111/ChampionMaker",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
