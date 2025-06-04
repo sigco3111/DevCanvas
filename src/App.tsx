@@ -14,7 +14,7 @@ function App() {
   
   // 검색 및 정렬 상태
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical'>('newest');
+  const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical' | 'updated'>('newest');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   
   // 카테고리별 프로젝트 수 계산
@@ -55,6 +55,8 @@ function App() {
           return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
         case 'alphabetical':
           return a.title.localeCompare(b.title);
+        case 'updated':
+          return new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime();
         default:
           return 0;
       }
@@ -122,10 +124,11 @@ function App() {
                     <select
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                       value={sortBy}
-                      onChange={(e) => setSortBy(e.target.value as 'newest' | 'oldest' | 'alphabetical')}
+                      onChange={(e) => setSortBy(e.target.value as 'newest' | 'oldest' | 'alphabetical' | 'updated')}
                       aria-label="정렬 기준"
                     >
                       <option value="newest">최신순</option>
+                      <option value="updated">업데이트순</option>
                       <option value="oldest">오래된순</option>
                       <option value="alphabetical">이름순</option>
                     </select>
