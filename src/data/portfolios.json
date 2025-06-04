@@ -234,5 +234,44 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },  
+  {
+    "id": "kbo-manager",
+    "title": "KBO 리그 매니저",
+    "description": "KBO 리그 매니저는 한국 프로야구(KBO) 팀들을 대상으로 하는 텍스트 및 차트 기반의 야구팀 관리 게임입니다. 팀의 재정을 관리하고 KBO 리그에서 우승으로 이끄는 것이 목표입니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://kbo-manager.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-05",
+    "updatedAt": "2025-06-05",
+    "githubUrl": "https://github.com/sigco3111/kbo-manager",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },  
+  {
+    "id": "deckbuilder-adventure",
+    "title": "덱빌더 어벤드벤처",
+    "description": "슬레이 더 스파이어(Slay the Spire)와 같은 덱 빌딩 카드 게임으로, 몬스터와 전투하고, 새로운 카드를 수집하며 탑을 정복하는 모험을 즐길 수 있습니다.",
+    "category": "보드게임",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://deckbuilder-adventure.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-05",
+    "updatedAt": "2025-06-05",
+    "githubUrl": "https://github.com/sigco3111/kbo-manager",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
