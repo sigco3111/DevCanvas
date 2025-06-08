@@ -227,7 +227,7 @@ function App() {
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">모바일에서도 플레이 가능한가요?</dt>
-                    <dd className="mt-2 text-gray-600 dark:text-gray-300">네, 모든 게임은 반응형으로 설계되어 모바일 기기에서도 원활하게 플레이할 수 있습니다.</dd>
+                    <dd className="mt-2 text-gray-600 dark:text-gray-300">네, 대부분의 게임은 반응형으로 설계되어 있지만 일부 게임 및 앱은 PC에서 원활하게 실행됩니다.</dd>
                   </div>
                 </dl>
               </div>

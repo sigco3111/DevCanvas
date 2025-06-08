@@ -12,4 +12,8 @@ export { default as Hero } from './Hero';
 export type { HeroProps, CTAButton } from './Hero/types';
 
 // ProjectCard 컴포넌트
-export { default as ProjectCard } from './ProjectCard'; 
+export { default as ProjectCard } from './ProjectCard';
+
+// VisitorCounter 컴포넌트
+export { default as VisitorCounter } from './VisitorCounter';
+export type { VisitorCounterProps } from './VisitorCounter/types'; 

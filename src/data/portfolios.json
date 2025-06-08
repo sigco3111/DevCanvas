@@ -273,5 +273,45 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "3d-block-world-edit",
+    "title": "3D 블록 월드 편집기",
+    "description": "Three.js로 구축된 간단한 3D 블록 월드 편집기입니다. 사용자는 블록을 배치하고 제거하여 구조물과 지형을 만들, 저장과 불러오기를 할 수 있습니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "Three.js",
+      "TypeScript"
+    ],
+    "liveUrl": "https://3d-block-world-edit.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-09",
+    "updatedAt": "2025-06-09",
+    "githubUrl": "https://github.com/sigco3111/3d-block-world-edit",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "super-robot-lite",
+    "title": "슈퍼로봇대전 Lite",
+    "description": "슈퍼로봇대전에서 영감을 받은 턴제 전투 및 유닛 통계 시각화를 특징으로 하는 간소화된 텍스트 및 차트 기반 게임입니다.",
+    "category": "전략",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://super-robot-lite.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-06-09",
+    "updatedAt": "2025-06-09",
+    "githubUrl": "https://github.com/sigco3111/super-robot-lite",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
