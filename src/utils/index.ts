@@ -4,7 +4,4 @@
  */
 
 // 포트폴리오 관련 유틸리티
-export * from './portfolio';
-
-// 방문자 카운터 유틸리티
-export * from './visitorCounter'; 
+export * from './portfolio'; 
