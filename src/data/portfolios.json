@@ -313,5 +313,25 @@
       "Google AI Studio",
       "Cursor"
     ]
+  }, 
+  {
+    "id": "rpg-script-editor",
+    "title": "RPG 스크립트 편집기",
+    "description": "RPG 게임의 세계관, 스테이지, 장면, 캐릭터를 만들고 관리하는 데 도움이 되는 웹 애플리케이션입니다. AI(Google Gemini API)를 활용하여 콘텐츠 생성을 지원합니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Google Gemini API"
+    ],
+    "liveUrl": "https://rpg-script-editor.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-10",
+    "updatedAt": "2025-06-10",
+    "githubUrl": "https://github.com/sigco3111/rpg-script-editor",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
