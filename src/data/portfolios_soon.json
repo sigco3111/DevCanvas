@@ -333,27 +333,7 @@
       "Google AI Studio",
       "Cursor"
     ]
-  },
-  {
-    "id": "gamedev-lite",
-    "title": "게임데브스토리 Lite ",
-    "description": "게임데브스토리 Lite는 카이로소프트(Kairosoft)의 명작 '게임 발전국 (Game Dev Story)'에 영감을 받아 제작된 텍스트 및 차트 기반의 게임 개발 시뮬레이션 게임입니다.",
-    "category": "경영",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts"
-    ],
-    "liveUrl": "https://gamedev-lite.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-06-11",
-    "updatedAt": "2025-06-11",
-    "githubUrl": "https://github.com/sigco3111/gamedev-lite",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
+  },  
   {
     "id": "rpg-adv-at",
     "title": "RPG어드벤처 (사이버펑크 조선)",
@@ -395,6 +375,26 @@
     ]
   },
   {
+    "id": "gamedev-lite",
+    "title": "게임데브스토리 Lite ",
+    "description": "게임데브스토리 Lite는 카이로소프트(Kairosoft)의 명작 '게임 발전국 (Game Dev Story)'에 영감을 받아 제작된 텍스트 및 차트 기반의 게임 개발 시뮬레이션 게임입니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://gamedev-lite.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-11",
+    "updatedAt": "2025-06-11",
+    "githubUrl": "https://github.com/sigco3111/gamedev-lite",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
     "id": "xcom-lite",
     "title": "XCOM Lite",
     "description": "XCOM Lite는 팀 관리, 연구, 3D 전투 기능을 갖춘 턴제 전술 분대 게임입니다. 이 프로젝트는 고전적인 XCOM 시리즈에서 영감을 받아 핵심 게임플레이 메커니즘에 중점을 둔 간소화된 경험을 제공하는 것을 목표로 합니다. 플레이어는 분대를 관리하고, 새로운 기술을 연구하고, 장비를 제작하고, 외계인의 위협에 맞서 치열한 턴제 전투에서 유닛을 지휘합니다.",
@@ -410,6 +410,47 @@
     "createdAt": "2025-06-16",
     "updatedAt": "2025-06-16",
     "githubUrl": "https://github.com/sigco3111/xcom-lite",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "block-simcity",
+    "title": "블록 심시티 빌더",
+    "description": "블록 심시티 빌더는 심시티 스타일의 3D 도시 건설 시뮬레이션 게임입니다. AI위임은 실험 단계이므로, 플레이어의 적절한 개입이 필요합니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts",
+      "Three.js"
+    ],
+    "liveUrl": "https://block-sim-city.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-06-17",
+    "updatedAt": "2025-06-17",
+    "githubUrl": "https://github.com/sigco3111/block-simCity",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "democracy4-lite",
+    "title": "민주주의4.0 Lite",
+    "description": "민주주의4.0 Lite는 국가를 운영하며 다양한 정책을 시행하고, 사회 지표를 관리하며, 국민들의 지지를 얻어 정권을 유지해야 하는 간소화된 정치 시뮬레이션 웹 게임입니다. 이 게임은 Positech Games의 Democracy 4에서 영감을 받아 제작되었습니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://democracy4-lite.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-06-17",
+    "updatedAt": "2025-06-17",
+    "githubUrl": "https://github.com/sigco3111/block-simCity",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
