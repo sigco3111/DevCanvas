@@ -346,8 +346,8 @@
     ],
     "liveUrl": "https://rpg-adv-at.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-12",
-    "updatedAt": "2025-06-12",
+    "createdAt": "2025-06-11",
+    "updatedAt": "2025-06-11",
     "githubUrl": "https://github.com/sigco3111/rpg-adv-at",
     "developmentTools": [
       "Google AI Studio",
@@ -366,8 +366,8 @@
     ],
     "liveUrl": "https://rpg-adv-bt.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-13",
-    "updatedAt": "2025-06-13",
+    "createdAt": "2025-06-12",
+    "updatedAt": "2025-06-12",
     "githubUrl": "https://github.com/sigco3111/rpg-adv-bt",
     "developmentTools": [
       "Google AI Studio",
@@ -386,8 +386,8 @@
     ],
     "liveUrl": "https://gamedev-lite.vercel.app/",
     "featured": false,
-    "createdAt": "2025-06-11",
-    "updatedAt": "2025-06-11",
+    "createdAt": "2025-06-13",
+    "updatedAt": "2025-06-13",
     "githubUrl": "https://github.com/sigco3111/gamedev-lite",
     "developmentTools": [
       "Google AI Studio",
