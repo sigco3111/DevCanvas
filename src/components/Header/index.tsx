@@ -7,6 +7,11 @@ import type { HeaderProps, NavigationItem } from './types';
 const DEFAULT_NAVIGATION: NavigationItem[] = [
   { label: '홈', href: '#home' },
   { label: '프로젝트', href: '#projects' },
+  { 
+    label: '게시판', 
+    href: 'https://script.google.com/macros/s/AKfycbylnF5Mg-gMrMkCT6yKA1jSALf_Jo-_lxmctx8vR5Tlb_2_fB2bYdGNutHg1i4dArF9VA/exec',
+    external: true 
+  },
 ];
 
 /**

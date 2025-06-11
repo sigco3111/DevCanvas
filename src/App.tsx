@@ -3,6 +3,7 @@ import { PortfolioItem } from './types/portfolio';
 import portfolioData from './data/portfolios.json';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { inject as injectAnalytics } from '@vercel/analytics';
 
 /**
  * DevCanvas 메인 애플리케이션 컴포넌트
@@ -62,18 +63,21 @@ function App() {
       }
     });
   
-  // 페이지 로드 시 접근성 개선
+  // 페이지 로드 시 접근성 개선 및 분석 초기화
   useEffect(() => {
     // 스크린 리더용 페이지 정보 업데이트
-    document.title = "DevCanvas - 웹앱 & 웹게임 허브 | 자동진행 게임 플랫폼";
+    document.title = "DevCanvas - 웹앱 & 웹게임 허브 | 자동진행형 게임 플랫폼";
+    
+    // Vercel Analytics 초기화
+    injectAnalytics();
   }, []);
 
   return (
     <>
       {/* 페이지별 SEO 메타데이터 (react-helmet-async 사용) */}
       <Helmet>
-        <title>DevCanvas - 웹앱 & 웹게임 허브 | 자동진행 게임 플랫폼</title>
-        <meta name="description" content="DevCanvas에서 World War Simulator, 테트리스 AI 마스터 3D, 방치형 모험가 노트 등 다양한 자동진행 게임을 즐겨보세요." />
+        <title>DevCanvas - 웹앱 & 웹게임 허브 | 자동진행형 게임 플랫폼</title>
+        <meta name="description" content="DevCanvas에서 다양한 자동진행형 게임과 앱을 공유합니다." />
         <link rel="canonical" href="https://devcanvas.vercel.app/" />
       </Helmet>
       
@@ -93,7 +97,7 @@ function App() {
                   프로젝트 둘러보기
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                  다양한 자동진행 게임과 웹 애플리케이션을 체험해보세요
+                  다양한 자동진행형 게임과 웹 애플리케이션을 체험해보세요
                 </p>
               </header>
               
@@ -219,11 +223,11 @@ function App() {
                 <dl className="space-y-6">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">DevCanvas는 어떤 플랫폼인가요?</dt>
-                    <dd className="mt-2 text-gray-600 dark:text-gray-300">DevCanvas는 자동진행 게임과 웹 애플리케이션을 제공하는 플랫폼입니다. 사용자는 다양한 게임과 앱을 무료로 사용할 수 있고, 모든 프로젝트의 소스코드는 오픈되어 있습니다.</dd>
+                    <dd className="mt-2 text-gray-600 dark:text-gray-300">DevCanvas는 자동진행형 게임과 웹 애플리케이션을 제공하는 플랫폼입니다. 사용자는 다양한 게임과 앱을 무료로 사용할 수 있고, 모든 프로젝트의 소스코드는 오픈되어 있습니다.</dd>
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">게임은 어떻게 플레이하나요?</dt>
-                    <dd className="mt-2 text-gray-600 dark:text-gray-300">각 게임 카드의 '앱 실행' 버튼을 클릭하면 새 탭에서 게임이 열립니다. 별도의 설치 없이 웹 브라우저에서 바로 플레이할 수 있습니다.</dd>
+                    <dd className="mt-2 text-gray-600 dark:text-gray-300">각 프로젝트 카드의 '앱 실행' 버튼을 클릭하면 새 탭에서 게임이나 웹앱이 열립니다. 별도의 설치 없이 웹 브라우저에서 바로 플레이할 수 있습니다.</dd>
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">모바일에서도 플레이 가능한가요?</dt>
