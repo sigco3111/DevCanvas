@@ -395,5 +395,24 @@
       "Cursor",
       "RPG 스크립트 편집기"
     ]
+  },
+  {
+    "id": "rpg-adv-bt",
+    "title": "구글 앱스크립트 게시판",
+    "description": "dev-canvas 구글 앱스크립트 마법사로 생성한 DB대신 구글스프레드시트를 이용한 게시판 입니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://script.google.com/macros/s/AKfycbylnF5Mg-gMrMkCT6yKA1jSALf_Jo-_lxmctx8vR5Tlb_2_fB2bYdGNutHg1i4dArF9VA/exec",
+    "featured": true,
+    "createdAt": "2025-06-12",
+    "updatedAt": "2025-06-12",
+    "githubUrl": "https://github.com/sigco3111/appscript_board",
+    "developmentTools": [
+      "구글 앱스크립트 마법사"
+    ]
   }
 ] 
