@@ -100,5 +100,25 @@
       "Google AI Studio",
       "Cursor"
     ]
+  }, 
+  {
+    "id": "make-app-wiz",
+    "title": "앱 생성 프롬프트 아이디어 마법사",
+    "description": "간단한 아이디어를 정교한 설계도로 변환해주는 '프롬프트 설계 도우미' 역할을 합니다. 완성된 프롬프트를 구글AI스튜디오 Build apps with Gemini에 붙여넣으면 앱을 생성할 수 있습니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Google Gemini API"
+    ],
+    "liveUrl": "https://make-app-wiz.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-19",
+    "updatedAt": "2025-06-19",
+    "githubUrl": "https://github.com/sigco3111/make-app-wiz",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
