@@ -1,25 +1,5 @@
 [
   {
-    "id": "gamedev-lite",
-    "title": "게임데브스토리 Lite ",
-    "description": "게임데브스토리 Lite는 카이로소프트(Kairosoft)의 명작 '게임 발전국 (Game Dev Story)'에 영감을 받아 제작된 텍스트 및 차트 기반의 게임 개발 시뮬레이션 게임입니다.",
-    "category": "경영",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts"
-    ],
-    "liveUrl": "https://gamedev-lite.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-06-13",
-    "updatedAt": "2025-06-13",
-    "githubUrl": "https://github.com/sigco3111/gamedev-lite",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
-  {
     "id": "xcom-lite",
     "title": "XCOM Lite",
     "description": "XCOM Lite는 팀 관리, 연구, 3D 전투 기능을 갖춘 턴제 전술 분대 게임입니다. 이 프로젝트는 고전적인 XCOM 시리즈에서 영감을 받아 핵심 게임플레이 메커니즘에 중점을 둔 간소화된 경험을 제공하는 것을 목표로 합니다. 플레이어는 분대를 관리하고, 새로운 기술을 연구하고, 장비를 제작하고, 외계인의 위협에 맞서 치열한 턴제 전투에서 유닛을 지휘합니다.",

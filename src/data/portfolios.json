@@ -414,5 +414,25 @@
     "developmentTools": [
       "구글 앱스크립트 마법사"
     ]
+  },
+  {
+    "id": "gamedev-lite",
+    "title": "게임데브스토리 Lite ",
+    "description": "게임데브스토리 Lite는 카이로소프트(Kairosoft)의 명작 '게임 발전국 (Game Dev Story)'에 영감을 받아 제작된 텍스트 및 차트 기반의 게임 개발 시뮬레이션 게임입니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://gamedev-lite.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-13",
+    "updatedAt": "2025-06-13",
+    "githubUrl": "https://github.com/sigco3111/gamedev-lite",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
