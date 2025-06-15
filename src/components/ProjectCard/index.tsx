@@ -18,7 +18,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     createdAt,
     updatedAt,
     developmentTools,
-    technologies
+    technologies,
+    geminiApiStatus
   } = project;
 
   // 날짜 포맷팅 함수
@@ -162,6 +163,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
       )}
       
+      {/* Gemini API Key 상태 표시 */}
+      {geminiApiStatus === 'required' && (
+        <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+          <div className="flex items-center">
+            <svg className="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <span className="text-sm font-medium text-red-800 dark:text-red-200">
+              🔑 이 앱을 사용하려면 Gemini API Key가 필수입니다
+            </span>
+          </div>
+        </div>
+      )}
+      
+      {geminiApiStatus === 'optional' && (
+        <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <div className="flex items-center">
+            <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-sm font-medium text-blue-800 dark:text-blue-200">
+              💡 Gemini API Key를 입력하면 추가 기능을 사용할 수 있습니다
+            </span>
+          </div>
+        </div>
+      )}
+      
       {/* 링크 버튼들 */}
       <div className="flex flex-wrap gap-2 mt-4">
         <a 
@@ -172,7 +200,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         >
           앱 실행
           <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
         {githubUrl && (

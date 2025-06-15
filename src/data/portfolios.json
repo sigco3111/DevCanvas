@@ -332,7 +332,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "optional"
   },  
   {
     "id": "rpg-adv-at",
@@ -373,7 +374,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "required"
   },
   {
     "id": "rpg-adv-bt",

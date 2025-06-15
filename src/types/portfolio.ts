@@ -5,6 +5,12 @@
 export type PortfolioCategory = 'game' | 'webapp' | 'all';
 
 /**
+ * Gemini API Key 필요 상태 타입
+ * required: 필수, optional: 선택, none: 필요없음
+ */
+export type GeminiApiStatus = 'required' | 'optional' | 'none';
+
+/**
  * 포트폴리오 항목 인터페이스
  * 개별 프로젝트의 정보를 담는 데이터 구조
  */
@@ -44,6 +50,9 @@ export interface PortfolioItem {
   
   /** 개발 도구 */
   developmentTools?: string[];
+  
+  /** Gemini API Key 필요 상태 (기본값: 'none') */
+  geminiApiStatus?: GeminiApiStatus;
 }
 
 /**
