@@ -457,5 +457,26 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "block-simcity",
+    "title": "블록 심시티 빌더",
+    "description": "블록 심시티 빌더는 심시티 스타일의 3D 도시 건설 시뮬레이션 게임입니다. AI위임은 실험 단계이므로, 플레이어의 적절한 개입이 필요합니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts",
+      "Three.js"
+    ],
+    "liveUrl": "https://block-sim-city.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-06-17",
+    "updatedAt": "2025-06-17",
+    "githubUrl": "https://github.com/sigco3111/block-simCity",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 

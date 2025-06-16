@@ -1,26 +1,5 @@
 [
   {
-    "id": "block-simcity",
-    "title": "블록 심시티 빌더",
-    "description": "블록 심시티 빌더는 심시티 스타일의 3D 도시 건설 시뮬레이션 게임입니다. AI위임은 실험 단계이므로, 플레이어의 적절한 개입이 필요합니다.",
-    "category": "경영",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts",
-      "Three.js"
-    ],
-    "liveUrl": "https://block-sim-city.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-06-17",
-    "updatedAt": "2025-06-17",
-    "githubUrl": "https://github.com/sigco3111/block-simCity",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
-  {
     "id": "democracy4-lite",
     "title": "민주주의4.0 Lite",
     "description": "민주주의4.0 Lite는 국가를 운영하며 다양한 정책을 시행하고, 사회 지표를 관리하며, 국민들의 지지를 얻어 정권을 유지해야 하는 간소화된 정치 시뮬레이션 웹 게임입니다. 이 게임은 Positech Games의 Democracy 4에서 영향을 받아 제작되었습니다.",
