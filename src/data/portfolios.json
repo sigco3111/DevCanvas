@@ -399,7 +399,7 @@
     ]
   },
   {
-    "id": "rpg-adv-bt",
+    "id": "appscript_board",
     "title": "구글 앱스크립트 게시판",
     "description": "dev-canvas 구글 앱스크립트 마법사로 생성한 DB대신 구글스프레드시트를 이용한 게시판 입니다.",
     "category": "App",
@@ -493,7 +493,7 @@
     "featured": true,
     "createdAt": "2025-06-18",
     "updatedAt": "2025-06-18",
-    "githubUrl": "https://github.com/sigco3111/block-simCity",
+    "githubUrl": "https://github.com/sigco3111/democracy4-lite",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
