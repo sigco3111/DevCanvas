@@ -3,7 +3,7 @@
     "id": "3d-fractal",
     "title": "3D 프랙탈 아트 생성기",
     "description": "3D De Jong 프랙탈 아트, 색상 팔레트, 이름 및 스토리를 생성하는 인터랙티브 웹 애플리케이션입니다. 생성된 프랙탈은 Three.js를 사용하여 실시간으로 렌더링되며, 사용자는 다양한 파라미터를 수동으로 조작하여 자신만의 프랙탈 아트를 만들 수도 있습니다.",
-    "category": "App",
+    "category": "기타",
     "technologies": [
       "React",
       "TypeScript",
@@ -105,7 +105,7 @@
   {
     "id": "watermelon",
     "title": "수박 게임 3D",
-    "description": "React, Three.js, 그리고 cannon-es를 사용하여 제작된 3D 과일 합치기 퍼즐 게임입니다. 인기 있는 수박 게임에서 영향을 받아 3차원 환경으로 재구성했습니다. 과일을 떨어뜨리고, 같은 과일끼리 합쳐 더 큰 과일을 만들며 최고 점수에 도전하세요!",
+    "description": "3D 과일 합치기 퍼즐 게임입니다. 인기 있는 수박 게임에서 영향을 받아 3차원 환경으로 재구성했습니다. 과일을 떨어뜨리고, 같은 과일끼리 합쳐 더 큰 과일을 만들며 최고 점수에 도전하세요!",
     "category": "퍼즐",
     "technologies": [
       "React",
@@ -118,6 +118,27 @@
     "createdAt": "2025-06-26",
     "updatedAt": "2025-06-26",
     "githubUrl": "https://github.com/sigco3111/watermelon",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
+    "id": "wobbly-tower",
+    "title": "흔들흔들 탑 쌓기",
+    "description": "다양한 모양의 블록을 중력을 거슬러 최대한 높이 쌓는 3D 물리 기반 게임입니다. 블록이 무너지지 않고 가장 높은 탑을 쌓아 최고 점수를 달성하세요!",
+    "category": "퍼즐",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Three.js",
+      "cannon-es "
+    ],
+    "liveUrl": "https://wobbly-tower.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/wobbly-tower",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
