@@ -1,25 +1,5 @@
 [
   {
-    "id": "democracy4-lite",
-    "title": "민주주의4.0 Lite",
-    "description": "민주주의4.0 Lite는 국가를 운영하며 다양한 정책을 시행하고, 사회 지표를 관리하며, 국민들의 지지를 얻어 정권을 유지해야 하는 간소화된 정치 시뮬레이션 웹 게임입니다. 이 게임은 Positech Games의 Democracy 4에서 영향을 받아 제작되었습니다.",
-    "category": "경영",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts"
-    ],
-    "liveUrl": "https://democracy4-lite.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-06-17",
-    "updatedAt": "2025-06-17",
-    "githubUrl": "https://github.com/sigco3111/block-simCity",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  }, 
-  {
     "id": "3d-fractal",
     "title": "3D 프랙탈 아트 생성기",
     "description": "3D De Jong 프랙탈 아트, 색상 팔레트, 이름 및 스토리를 생성하는 인터랙티브 웹 애플리케이션입니다. 생성된 프랙탈은 Three.js를 사용하여 실시간으로 렌더링되며, 사용자는 다양한 파라미터를 수동으로 조작하여 자신만의 프랙탈 아트를 만들 수도 있습니다.",
@@ -31,8 +11,8 @@
     ],
     "liveUrl": "https://3d-fractal-one.vercel.app/",
     "featured": false,
-    "createdAt": "2025-06-24",
-    "updatedAt": "2025-06-24",
+    "createdAt": "2025-06-19",
+    "updatedAt": "2025-06-19",
     "githubUrl": "https://github.com/sigco3111/3d-fractal",
     "developmentTools": [
       "Google AI Studio",
@@ -52,8 +32,8 @@
     ],
     "liveUrl": "https://department-tycoon.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-18",
-    "updatedAt": "2025-06-18",
+    "createdAt": "2025-06-20",
+    "updatedAt": "2025-06-20",
     "githubUrl": "https://github.com/sigco3111/department-tycoon",
     "developmentTools": [
       "Google AI Studio",
@@ -73,8 +53,8 @@
     ],
     "liveUrl": "https://diablock.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-19",
-    "updatedAt": "2025-06-19",
+    "createdAt": "2025-06-23",
+    "updatedAt": "2025-06-23",
     "githubUrl": "https://github.com/sigco3111/diablock",
     "developmentTools": [
       "Google AI Studio",
@@ -93,8 +73,8 @@
     ],
     "liveUrl": "https://kingdoms3-tradewar.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-20",
-    "updatedAt": "2025-06-20",
+    "createdAt": "2025-06-24",
+    "updatedAt": "2025-06-24",
     "githubUrl": "https://github.com/sigco3111/kingdoms3-tradewar",
     "developmentTools": [
       "Google AI Studio",
@@ -114,8 +94,8 @@
     ],
     "liveUrl": "https://terrarium-flame.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-23",
-    "updatedAt": "2025-06-23",
+    "createdAt": "2025-06-25",
+    "updatedAt": "2025-06-25",
     "githubUrl": "https://github.com/sigco3111/terrarium",
     "developmentTools": [
       "Google AI Studio",
@@ -135,8 +115,8 @@
     ],
     "liveUrl": "https://watermelon-tan-nu.vercel.app/",
     "featured": true,
-    "createdAt": "2025-06-24",
-    "updatedAt": "2025-06-24",
+    "createdAt": "2025-06-26",
+    "updatedAt": "2025-06-26",
     "githubUrl": "https://github.com/sigco3111/watermelon",
     "developmentTools": [
       "Google AI Studio",
