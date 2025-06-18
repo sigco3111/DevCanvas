@@ -142,6 +142,27 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "castle-breaker",
+    "title": "캐슬 브레이커",
+    "description": "플레이어가 발사체를 사용하여 블록으로 만들어진 건물과 황금 블록을 무너뜨리는 3D 물리 기반 게임입니다. 사용자가 직접 레벨 디자인을 할 수 있는 툴을 제공하며, Gemini API를 활용한 AI 레벨 생성 기능도 포함하고 있습니다.",
+    "category": "기타",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Three.js",
+      "cannon-es "
+    ],
+    "liveUrl": "https://castle-breaker.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/castle-breaker",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }, 
   {
     "id": "make-app-wiz",
