@@ -124,6 +124,26 @@
     ]
   },
   {
+    "id": "age-of-exploration-lite",
+    "title": "대항해시대 Lite",
+    "description": "대항해시대2의 영향을 받아 제작된 웹 기반 탐험 및 교역 시뮬레이션 게임입니다. 플레이어는 대항해시대의 선장이 되어 미지의 바다를 탐험하고, 다양한 항구와 교역하며 부를 쌓고, 여러 도전적인 이벤트에 직면하게 됩니다.",
+    "category": "RPG",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://age-of-exploration-lite.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/age-of-exploration-lite",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
+  },
+  {
     "id": "wobbly-tower",
     "title": "흔들흔들 탑 쌓기",
     "description": "다양한 모양의 블록을 중력을 거슬러 최대한 높이 쌓는 3D 물리 기반 게임입니다. 블록이 무너지지 않고 가장 높은 탑을 쌓아 최고 점수를 달성하세요!",
