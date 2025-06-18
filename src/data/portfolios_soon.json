@@ -1,26 +1,5 @@
 [
   {
-    "id": "3d-fractal",
-    "title": "3D 프랙탈 아트 생성기",
-    "description": "3D De Jong 프랙탈 아트, 색상 팔레트, 이름 및 스토리를 생성하는 인터랙티브 웹 애플리케이션입니다. 생성된 프랙탈은 Three.js를 사용하여 실시간으로 렌더링되며, 사용자는 다양한 파라미터를 수동으로 조작하여 자신만의 프랙탈 아트를 만들 수도 있습니다.",
-    "category": "기타",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Google Gemini API"
-    ],
-    "liveUrl": "https://3d-fractal-one.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-06-19",
-    "updatedAt": "2025-06-19",
-    "githubUrl": "https://github.com/sigco3111/3d-fractal",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "optional"
-  },
-  {
     "id": "department-tycoon",
     "title": "백화점 타이쿤",
     "description": "카이로소프트 스타일의 백화점 경영 시뮬레이션 게임입니다. 플레이어는 자신만의 백화점을 건설하고, 다양한 상점을 유치하며, 고객 만족도를 높여 최고의 리테일 제국을 만드는 것을 목표로 합니다.",

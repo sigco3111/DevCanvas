@@ -498,5 +498,26 @@
       "Google AI Studio",
       "Cursor"
     ]
+  },
+  {
+    "id": "3d-fractal",
+    "title": "3D 프랙탈 아트 생성기",
+    "description": "3D De Jong 프랙탈 아트, 색상 팔레트, 이름 및 스토리를 생성하는 인터랙티브 웹 애플리케이션입니다. 생성된 프랙탈은 Three.js를 사용하여 실시간으로 렌더링되며, 사용자는 다양한 파라미터를 수동으로 조작하여 자신만의 프랙탈 아트를 만들 수도 있습니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Google Gemini API"
+    ],
+    "liveUrl": "https://3d-fractal-one.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-06-19",
+    "updatedAt": "2025-06-19",
+    "githubUrl": "https://github.com/sigco3111/3d-fractal",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "optional"
   }
 ] 
