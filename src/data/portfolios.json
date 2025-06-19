@@ -519,5 +519,25 @@
       "Cursor"
     ],
     "geminiApiStatus": "optional"
+  },
+  {
+    "id": "department-tycoon",
+    "title": "백화점 타이쿤",
+    "description": "카이로소프트 스타일의 백화점 경영 시뮬레이션 게임입니다. 플레이어는 자신만의 백화점을 건설하고, 다양한 상점을 유치하며, 고객 만족도를 높여 최고의 리테일 제국을 만드는 것을 목표로 합니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://department-tycoon.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-06-20",
+    "updatedAt": "2025-06-20",
+    "githubUrl": "https://github.com/sigco3111/department-tycoon",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }
 ] 
