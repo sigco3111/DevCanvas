@@ -1,26 +1,5 @@
 [
   {
-    "id": "diablock",
-    "title": "디아블록",
-    "description": "디아블록은 디아블로 시리즈에서 영향을 받아 제작된 3D 블록 스타일의 자동 전투 디펜스 게임입니다. 플레이어는 끊임없이 몰려오는 몬스터 무리를 상대하고, 강력한 아이템을 파밍하며 캐릭터를 성장시켜 점점 더 어려워지는 도전에 맞서게 됩니다.",
-    "category": "RPG",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts",
-      "Three.js"
-    ],
-    "liveUrl": "https://diablock.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-06-23",
-    "updatedAt": "2025-06-23",
-    "githubUrl": "https://github.com/sigco3111/diablock",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ]
-  },
-  {
     "id": "kingdoms3-tradewar",
     "title": "삼국지 : 무역전쟁",
     "description": "플레이어는 삼국시대의 상인이 되어, 여러 AI 세력들이 패권을 다투는 혼란 속에서 활동합니다. 직접적인 군사 통제 대신, 플레이어는 교묘한 교역, 시의적절한 투자, 대담한 금융 전술, 세력 간의 전쟁 지원, 지역 영향력 구축 및 첩보 활동, 세력 관계 관리, 상인 평판 시스템, 동적 경제 이벤트, 세력 임무 시스템, 특화 건물 및 세력 정책 투자 등을 통해 막대한 부를 쌓는 것을 목표로 합니다. 게임은 AI 세력 중 하나가 천하를 통일하면 종료되며, 플레이어의 최종 자산이 성공의 척도가 됩니다.",
@@ -186,6 +165,26 @@
       "Cursor"
     ],
     "geminiApiStatus": "optional"
+  },{
+    "id": "core-breaker",
+    "title": "코어 브레이커",
+    "description": "플레이어가 다양한 투사체를 사용하여 역동적으로 움직이는 복합 구조물(코어)을 파괴하는 1인칭 슈팅(FPS) 게임입니다. 스테이지를 클리어하며 얻는 '조각'을 사용하여 자신의 능력치와 무기를 업그레이드하고, 점점 더 어려워지는 도전에 맞서게 됩니다.",
+    "category": "FPS",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Three.js",
+      "cannon-es "
+    ],
+    "liveUrl": "https://core-breaker.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/core-breaker",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ]
   }, 
   {
     "id": "make-app-wiz",
@@ -202,6 +201,49 @@
     "createdAt": "2025-",
     "updatedAt": "2025-",
     "githubUrl": "https://github.com/sigco3111/make-app-wiz",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "required"
+  }, 
+  {
+    "id": "fire-tribe-base",
+    "title": "파이어족 베이스",
+    "description": "파이어족을 위한 맞춤형 아이디어 발상 및 관리 플랫폼. 재정적 목표 달성을 위한 수입 증대, 지출 감소, 투자 아이디어 등을 체계적으로 기록하고 발전시킬 수 있도록 돕습니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Google Gemini API"
+    ],
+    "liveUrl": "https://fire-tribe-base.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/fire-tribe-base",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "required"
+  }, 
+  {
+    "id": "insight-pick",
+    "title": "인사이트픽",
+    "description": "경제 지표와 시장 동향을 분석하여 독특한 방식으로 주식을 추천하는 웹 애플리케이션입니다. 개인 투자자(초보부터 전문가까지)가 재정 목표와 위험 허용 범위에 따라 AI가 생성한 포트폴리오 제안을 바탕으로 데이터 기반 투자 결정을 내릴 수 있도록 돕는 것을 목표로 합니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts",
+      "Google Gemini API"
+    ],
+    "liveUrl": "https://insight-pick.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/insight-pick",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
