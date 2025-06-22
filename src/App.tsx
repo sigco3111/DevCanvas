@@ -1,5 +1,5 @@
 import { Header, Hero, ProjectCard } from './components';
-import { PortfolioItem } from './types/portfolio';
+import { PortfolioItem, GeminiApiStatus } from './types/portfolio';
 import portfolioData from './data/portfolios.json';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -18,6 +18,9 @@ function App() {
   const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'alphabetical' | 'updated'>('newest');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   
+  // Gemini API 필터 상태
+  const [selectedGeminiFilters, setSelectedGeminiFilters] = useState<GeminiApiStatus[]>([]);
+  
   // 카테고리별 프로젝트 수 계산
   const categoryCounts = portfolios.reduce((acc, project) => {
     acc[project.category] = (acc[project.category] || 0) + 1;
@@ -33,6 +36,14 @@ function App() {
       // 카테고리 필터링
       if (selectedCategory !== 'all' && project.category !== selectedCategory) {
         return false;
+      }
+      
+      // Gemini API 필터링
+      if (selectedGeminiFilters.length > 0) {
+        const projectStatus = project.geminiApiStatus || 'none';
+        if (!selectedGeminiFilters.includes(projectStatus)) {
+          return false;
+        }
       }
       
       // 검색어 필터링
@@ -62,6 +73,13 @@ function App() {
           return 0;
       }
     });
+
+  // 필터 초기화 함수
+  const resetFilters = () => {
+    setSearchTerm('');
+    setSelectedCategory('all');
+    setSelectedGeminiFilters([]);
+  };
   
   // 페이지 로드 시 접근성 개선 및 분석 초기화
   useEffect(() => {
@@ -166,14 +184,93 @@ function App() {
                 </ul>
               </div>
               
-              {/* 검색 결과 표시 */}
-              {searchTerm.trim() !== '' && (
-                <div className="text-center mb-6">
-                  <p className="text-gray-600 dark:text-gray-300">
-                    "{searchTerm}" 검색 결과: {filteredProjects.length}개 프로젝트
-                  </p>
+              {/* Gemini API 필터 - 작은 영역 */}
+              <div className="mb-8 max-w-3xl mx-auto">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 text-center">
+                    🔑 Gemini API Key 필요 여부
+                  </h3>
+                  
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {[
+                      { value: 'none' as GeminiApiStatus, label: '불필요', emoji: '🚫' },
+                      { value: 'optional' as GeminiApiStatus, label: '부분필요', emoji: '💡' },
+                      { value: 'required' as GeminiApiStatus, label: '필요', emoji: '🔑' }
+                    ].map(option => (
+                      <label 
+                        key={option.value}
+                        className={`flex items-center space-x-2 cursor-pointer px-3 py-2 rounded-full transition-colors text-sm ${
+                          selectedGeminiFilters.includes(option.value) 
+                            ? 'bg-blue-100 dark:bg-blue-900/30 border border-blue-300 dark:border-blue-700 text-blue-800 dark:text-blue-200' 
+                            : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300'
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selectedGeminiFilters.includes(option.value)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setSelectedGeminiFilters([...selectedGeminiFilters, option.value]);
+                            } else {
+                              setSelectedGeminiFilters(selectedGeminiFilters.filter(filter => filter !== option.value));
+                            }
+                          }}
+                          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <span className="text-sm">{option.emoji}</span>
+                        <span className="font-medium">{option.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* 필터 상태 표시 및 초기화 */}
+              {(searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedGeminiFilters.length > 0) && (
+                <div className="max-w-4xl mx-auto mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-sm font-medium text-blue-800 dark:text-blue-200">
+                        활성 필터:
+                      </span>
+                      {searchTerm.trim() !== '' && (
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200">
+                          검색: "{searchTerm}"
+                        </span>
+                      )}
+                      {selectedCategory !== 'all' && (
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200">
+                          카테고리: {selectedCategory}
+                        </span>
+                      )}
+                      {selectedGeminiFilters.map(filter => (
+                        <span 
+                          key={filter}
+                          className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200"
+                        >
+                          API: {filter === 'none' ? '불필요' : filter === 'optional' ? '부분필요' : '필요'}
+                        </span>
+                      ))}
+                    </div>
+                    <button
+                      onClick={resetFilters}
+                      className="px-3 py-2 text-sm font-medium text-blue-800 dark:text-blue-200 hover:bg-blue-100 dark:hover:bg-blue-800 rounded-lg transition-colors"
+                    >
+                      필터 초기화
+                    </button>
+                  </div>
                 </div>
               )}
+              
+              {/* 검색 결과 표시 */}
+              <div className="text-center mb-6">
+                <p className="text-gray-600 dark:text-gray-300">
+                  총 {filteredProjects.length}개의 프로젝트가 표시됩니다
+                  {(searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedGeminiFilters.length > 0) && 
+                    ` (전체 ${portfolios.length}개 중)`
+                  }
+                </p>
+              </div>
               
               {/* 프로젝트 카드들 - 구조화된 마크업 */}
               {filteredProjects.length > 0 ? (
@@ -193,23 +290,14 @@ function App() {
                   <p className="mt-1 text-gray-500 dark:text-gray-400">다른 검색어를 입력하거나 필터를 조정해보세요.</p>
                   <div className="mt-6">
                     <button
-                      onClick={() => {
-                        setSearchTerm('');
-                        setSelectedCategory('all');
-                      }}
+                      onClick={resetFilters}
                       className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                     >
-                      필터 초기화
+                      모든 필터 초기화
                     </button>
                   </div>
                 </div>
               )}
-
-              <footer className="text-center mt-12">
-                <p className="text-gray-500 dark:text-gray-400">
-                  더 많은 프로젝트가 곧 추가될 예정입니다!
-                </p>
-              </footer>
             </div>
           </section>
           

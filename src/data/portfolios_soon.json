@@ -17,7 +17,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "terrarium",
@@ -38,7 +39,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "watermelon",
@@ -59,7 +61,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "age-of-exploration-lite",
@@ -79,7 +82,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "wobbly-tower",
@@ -100,7 +104,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "castle-breaker",
@@ -121,7 +126,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+      ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "pixedit",
@@ -168,7 +174,7 @@
   },{
     "id": "core-breaker",
     "title": "코어 브레이커",
-    "description": "플레이어가 다양한 투사체를 사용하여 역동적으로 움직이는 복합 구조물(코어)을 파괴하는 1인칭 슈팅(FPS) 게임입니다. 스테이지를 클리어하며 얻는 '조각'을 사용하여 자신의 능력치와 무기를 업그레이드하고, 점점 더 어려워지는 도전에 맞서게 됩니다.",
+    "description": "플레이어가 다양한 투사체를 사용하여 역동적으로 움직이는 복합 구조물(코어)을 파괴하는 1인칭 슈팅(FPS) 게임입니다. 스테이지를 클리어하며 얻는 '조각'을 사용하여 자신의 능력치와 무기를 업그레이드하고, 점점 더 어려워지는 도전에 맞서게 됩니다. [PC전용 입니다.]",
     "category": "FPS",
     "technologies": [
       "React",
@@ -184,7 +190,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   }, 
   {
     "id": "make-app-wiz",

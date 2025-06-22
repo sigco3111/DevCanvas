@@ -16,7 +16,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "enterprise-ceo",
@@ -36,7 +37,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "world-war-simulator",
@@ -56,7 +58,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "idle-rpg",
@@ -75,7 +78,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "champion-maker",
@@ -95,7 +99,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "geo-poly",
@@ -115,7 +120,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "tetris-am3d",
@@ -135,7 +141,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "life-game",
@@ -154,7 +161,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "royal-secretary",
@@ -174,7 +182,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },  
   {
     "id": "football-manager",
@@ -194,7 +203,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },  
   {
     "id": "threekingdoms-lite",
@@ -211,11 +221,12 @@
     "createdAt": "2025-06-03",
     "updatedAt": "2025-06-03",
     "githubUrl": "https://github.com/sigco3111/Kingdoms3Lite",
-    "developmentTools": [
+        "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
-  },
+    ],
+    "geminiApiStatus": "none"
+  },  
   {
     "id": "fireworks-master",
     "title": "파이어웍스 마스터",
@@ -233,7 +244,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },  
   {
     "id": "kbo-manager",
@@ -253,7 +265,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },  
   {
     "id": "deckbuilder-adventure",
@@ -272,7 +285,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "3d-block-world-edit",
@@ -292,7 +306,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "super-robot-lite",
@@ -312,7 +327,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   }, 
   {
     "id": "rpg-script-editor",
@@ -354,7 +370,8 @@
       "Google AI Studio",
       "Cursor",
       "RPG 스크립트 편집기"
-    ]
+    ],
+    "geminiApiStatus": "none"
   }, 
   {
     "id": "google-script-wizard",
@@ -396,7 +413,8 @@
       "Google AI Studio",
       "Cursor",
       "RPG 스크립트 편집기"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "appscript_board",
@@ -414,8 +432,9 @@
     "updatedAt": "2025-06-12",
     "githubUrl": "https://github.com/sigco3111/appscript_board",
     "developmentTools": [
-      "구글 앱스크립트 마법사"
-    ]
+      "구글 앱스크립트 마법사"    
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "gamedev-lite",
@@ -435,7 +454,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "xcom-lite",
@@ -456,7 +476,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "block-simcity",
@@ -477,7 +498,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "democracy4-lite",
@@ -538,7 +560,8 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   },
   {
     "id": "diablock",
@@ -559,6 +582,7 @@
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
-    ]
+    ],
+    "geminiApiStatus": "none"
   }
 ] 
