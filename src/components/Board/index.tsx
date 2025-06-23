@@ -51,7 +51,7 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
       setDebugInfo('✅ Firebase 컬렉션 참조 생성 성공');
       
       // 2. 읽기 테스트
-      const snapshot = await getDocs(testCollection);
+      await getDocs(testCollection);
       setDebugInfo(prev => prev + '\n✅ Firestore 읽기 테스트 성공');
       
       // 3. 쓰기 테스트

@@ -23,7 +23,7 @@ interface PostDetailProps {
  */
 const PostDetail: React.FC<PostDetailProps> = ({ post, onBack, onEdit, onDelete }) => {
   // 인증 상태 가져오기
-  const { currentUser, isLoading: authLoading } = useAuth();
+  const { currentUser } = useAuth();
   
   // 상태 관리
   const [comments, setComments] = useState<BoardComment[]>([]);

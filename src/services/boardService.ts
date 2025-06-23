@@ -7,15 +7,10 @@ import {
   getDocs,
   getDoc,
   query,
-  where,
-  orderBy,
   limit,
-  startAfter,
   onSnapshot,
   increment,
   serverTimestamp,
-  DocumentSnapshot,
-  QuerySnapshot,
   Unsubscribe
 } from 'firebase/firestore';
 import { db } from '../lib/firebase';
