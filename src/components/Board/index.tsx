@@ -30,7 +30,7 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [connectionStatus, setConnectionStatus] = useState<'connecting' | 'connected' | 'error'>('connecting');
-  const [debugInfo, setDebugInfo] = useState<string>('');
+
   
   // 필터 옵션
   const [filterOptions, setFilterOptions] = useState<BoardFilterOptions>({
@@ -44,23 +44,20 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
   // Firebase 연결 테스트 함수
   const testFirebaseConnection = async () => {
     try {
-      setDebugInfo('Firebase 연결 테스트 시작...');
+      setConnectionStatus('connecting');
       
       // 1. 기본 연결 테스트
       const testCollection = collection(db, 'test');
-      setDebugInfo('✅ Firebase 컬렉션 참조 생성 성공');
       
       // 2. 읽기 테스트
       await getDocs(testCollection);
-      setDebugInfo(prev => prev + '\n✅ Firestore 읽기 테스트 성공');
       
       // 3. 쓰기 테스트
-      const testDoc = await addDoc(testCollection, {
+      await addDoc(testCollection, {
         test: true,
         timestamp: new Date(),
         message: 'Firebase 연결 테스트'
       });
-      setDebugInfo(prev => prev + `\n✅ Firestore 쓰기 테스트 성공 (ID: ${testDoc.id})`);
       
       setConnectionStatus('connected');
       setError(null);
@@ -72,12 +69,11 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
       console.error('Firebase 연결 테스트 실패:', err);
       setConnectionStatus('error');
       
-      let errorMessage = `❌ Firebase 연결 실패: ${err.message}`;
+      let errorMessage = `Firebase 연결 실패: ${err.message}`;
       if (err.code) {
-        errorMessage += `\n코드: ${err.code}`;
+        errorMessage += ` (코드: ${err.code})`;
       }
       
-      setDebugInfo(prev => prev + '\n' + errorMessage);
       setError(errorMessage);
     }
   };
@@ -92,7 +88,6 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
       const { posts } = await getPosts(filterOptions);
       setPosts(posts);
       setConnectionStatus('connected');
-      setDebugInfo(prev => prev + `\n✅ 게시글 ${posts.length}개 로드 성공`);
     } catch (err: any) {
       console.error('게시글 로드 오류:', err);
       setConnectionStatus('error');
@@ -108,7 +103,7 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
         setError(err.message || '알 수 없는 오류가 발생했습니다.');
       }
       
-      setDebugInfo(prev => prev + `\n❌ 게시글 로드 실패: ${err.message}`);
+
     } finally {
       setIsLoading(false);
     }
@@ -213,26 +208,9 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
     handleBackToList();
   };
 
-  // Firebase 연결 상태 표시 컴포넌트
+  // Firebase 연결 상태 표시 컴포넌트 (에러 상태에서만 표시)
   const renderConnectionStatus = () => {
-    if (connectionStatus === 'connecting') {
-      return (
-        <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-600 mr-3"></div>
-              <span className="text-yellow-800 dark:text-yellow-200">Firebase 연결 중...</span>
-            </div>
-            <button
-              onClick={testFirebaseConnection}
-              className="px-3 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors text-sm"
-            >
-              연결 테스트
-            </button>
-          </div>
-        </div>
-      );
-    } else if (connectionStatus === 'error') {
+    if (connectionStatus === 'error') {
       return (
         <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6">
           <div className="flex items-center justify-between">
@@ -253,16 +231,6 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
             </button>
           </div>
           
-          {/* 디버그 정보 표시 */}
-          {debugInfo && (
-            <div className="mt-4 p-3 bg-gray-100 dark:bg-gray-800 rounded border">
-              <h4 className="text-gray-800 dark:text-gray-200 font-medium mb-2">디버그 정보:</h4>
-              <pre className="text-xs text-gray-700 dark:text-gray-300 whitespace-pre-wrap overflow-auto max-h-40">
-                {debugInfo}
-              </pre>
-            </div>
-          )}
-          
           {/* 해결 방법 안내 */}
           <div className="mt-4 p-3 bg-red-100 dark:bg-red-800/30 rounded border-l-4 border-red-500">
             <h4 className="text-red-800 dark:text-red-200 font-medium mb-2">해결 방법:</h4>
@@ -272,41 +240,14 @@ const Board: React.FC<BoardProps> = ({ onBack }) => {
               <li>3. .env 파일의 Firebase 설정값이 올바른지 확인</li>
               <li>4. 네트워크 연결 상태 확인</li>
               <li>5. Firebase Console에서 필요한 인덱스 생성</li>
-              <li>6. 브라우저 개발자 도구 콘솔에서 자세한 오류 확인</li>
             </ul>
           </div>
         </div>
       );
-    } else {
-      return (
-        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-3 mb-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <svg className="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-              <span className="text-green-800 dark:text-green-200 text-sm">Firebase 연결됨</span>
-            </div>
-            <button
-              onClick={testFirebaseConnection}
-              className="px-2 py-1 bg-green-600 text-white rounded text-xs hover:bg-green-700 transition-colors"
-            >
-              재테스트
-            </button>
-          </div>
-          
-          {/* 성공 시 디버그 정보도 표시 */}
-          {debugInfo && (
-            <details className="mt-2">
-              <summary className="text-green-700 dark:text-green-300 text-xs cursor-pointer">디버그 정보 보기</summary>
-              <pre className="text-xs text-green-600 dark:text-green-400 whitespace-pre-wrap mt-1 p-2 bg-green-100 dark:bg-green-900/30 rounded">
-                {debugInfo}
-              </pre>
-            </details>
-          )}
-        </div>
-      );
     }
+    
+    // 연결 중이거나 연결 성공 시에는 아무것도 표시하지 않음
+    return null;
   };
 
   // 뷰 렌더링
