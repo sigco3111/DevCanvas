@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "upload-portfolios": "tsx src/scripts/uploadPortfolios.ts",
+    "check-portfolios": "tsx src/scripts/checkPortfolios.ts",
+    "add-portfolio": "tsx src/scripts/addSinglePortfolio.ts",
+    "debug-dates": "tsx src/scripts/debugDates.ts",
+    "fix-updated-dates": "tsx src/scripts/fixUpdatedDates.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.8",
@@ -23,12 +28,14 @@
     "@types/react-dom": "18.3.5",
     "@vitejs/plugin-react": "4.3.4",
     "autoprefixer": "10.4.20",
+    "dotenv": "^16.4.7",
     "eslint": "9.17.0",
     "eslint-plugin-react-hooks": "5.0.0",
     "eslint-plugin-react-refresh": "0.4.16",
     "globals": "15.14.0",
     "postcss": "8.5.1",
     "tailwindcss": "3.4.17",
+    "tsx": "4.19.2",
     "typescript": "5.7.2",
     "typescript-eslint": "8.18.2",
     "vite": "6.0.7"

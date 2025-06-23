@@ -1,8 +1,22 @@
 /**
- * 포트폴리오 카테고리 타입
- * 게임, 웹앱, 전체 카테고리를 정의
+ * 기본 제공 카테고리 목록
+ * 새로운 카테고리는 언제든지 추가 가능합니다
  */
-export type PortfolioCategory = 'game' | 'webapp' | 'all';
+export const DEFAULT_CATEGORIES = [
+  'App',
+  '경영', 
+  '전략',
+  'RPG',
+  '퍼즐',
+  '보드게임',
+  '육성',
+] as const;
+
+/**
+ * 포트폴리오 카테고리 타입
+ * 동적으로 카테고리 추가 가능
+ */
+export type PortfolioCategory = string | 'all';
 
 /**
  * Gemini API Key 필요 상태 타입
@@ -65,4 +79,46 @@ export interface PortfolioFilterOptions {
   
   /** 추천 프로젝트만 표시 여부 */
   featuredOnly: boolean;
-} 
+}
+
+/**
+ * 카테고리 관련 유틸리티 함수들
+ */
+export const CategoryUtils = {
+  /**
+   * 모든 카테고리 목록을 가져옵니다 (포트폴리오 데이터에서 동적으로 추출)
+   */
+  getAllCategories: (portfolios: PortfolioItem[]): string[] => {
+    const categories = new Set<string>();
+    
+    // 기본 카테고리 추가
+    DEFAULT_CATEGORIES.forEach(cat => categories.add(cat));
+    
+    // 포트폴리오에서 사용된 카테고리 추가
+    portfolios.forEach(portfolio => {
+      if (portfolio.category !== 'all') {
+        categories.add(portfolio.category);
+      }
+    });
+    
+    return Array.from(categories).sort();
+  },
+
+  /**
+   * 카테고리가 유효한지 확인합니다
+   */
+  isValidCategory: (category: string): boolean => {
+    return category === 'all' || (typeof category === 'string' && category.length > 0);
+  },
+
+  /**
+   * 새로운 카테고리를 추가할 수 있는지 확인합니다
+   */
+  canAddCategory: (category: string): boolean => {
+    return typeof category === 'string' && 
+           category.length > 0 && 
+           category !== 'all' &&
+           !category.includes('/') && // Firebase 컬렉션 이름 제한
+           category.trim() === category; // 앞뒤 공백 없음
+  }
+}; 

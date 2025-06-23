@@ -1,5 +1,6 @@
 import React from 'react';
 import { PortfolioItem } from '../../types/portfolio';
+import { formatSafeDate } from '../../utils/dateUtils';
 
 interface ProjectCardProps {
   project: PortfolioItem;
@@ -22,15 +23,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     geminiApiStatus
   } = project;
 
-  // 날짜 포맷팅 함수
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('ko-KR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  // 날짜 포맷팅 함수 (유틸리티 함수 사용)
+  const formatDate = formatSafeDate;
 
   // 아이콘 색상 랜덤 선택 (일관성을 위해 제목 기반으로)
   const colors = ['blue', 'red', 'green', 'purple', 'orange', 'yellow', 'indigo'];
@@ -119,14 +113,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </svg>
           <span>생성: {formatDate(createdAt)}</span>
         </div>
-        {updatedAt && (
-          <div className="flex items-center">
-            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-            <span>업데이트: {formatDate(updatedAt)}</span>
-          </div>
-        )}
+        <div className="flex items-center">
+          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          <span>업데이트: {formatDate(updatedAt || createdAt)}</span>
+          {updatedAt && updatedAt !== createdAt && (
+            <span className="ml-2 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">
+              수정됨
+            </span>
+          )}
+        </div>
       </div>
       
       {/* 개발 도구 */}

@@ -1,7 +1,7 @@
 import { Header, Hero, ProjectCard } from './components';
 import Board from './components/Board';
 import { PortfolioItem, GeminiApiStatus } from './types/portfolio';
-import portfolioData from './data/portfolios.json';
+import { getPortfolios, getAllCategories, getCategoryCounts } from './utils/portfolio';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { inject as injectAnalytics } from '@vercel/analytics';
@@ -12,8 +12,10 @@ import { AuthProvider } from './contexts/AuthContext';
  * 웹앱과 웹게임을 연결해주는 허브 페이지
  */
 function App() {
-  // 포트폴리오 데이터 로드
-  const portfolios: PortfolioItem[] = portfolioData as PortfolioItem[];
+  // 포트폴리오 데이터 상태
+  const [portfolios, setPortfolios] = useState<PortfolioItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   // 현재 페이지 상태 ('portfolio' | 'board')
   const [currentPage, setCurrentPage] = useState<'portfolio' | 'board'>('portfolio');
@@ -26,14 +28,30 @@ function App() {
   // Gemini API 필터 상태
   const [selectedGeminiFilters, setSelectedGeminiFilters] = useState<GeminiApiStatus[]>([]);
   
-  // 카테고리별 프로젝트 수 계산
-  const categoryCounts = portfolios.reduce((acc, project) => {
-    acc[project.category] = (acc[project.category] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
+  // 포트폴리오 데이터 로드
+  useEffect(() => {
+    const loadPortfolios = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        const data = await getPortfolios();
+        setPortfolios(data);
+      } catch (err) {
+        console.error('포트폴리오 데이터 로드 실패:', err);
+        setError('포트폴리오 데이터를 불러올 수 없습니다.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadPortfolios();
+  }, []);
+
+  // 카테고리별 프로젝트 수 계산 (동적 카테고리 지원)
+  const categoryCounts = getCategoryCounts(portfolios);
   
-  // 모든 카테고리 목록 생성
-  const allCategories = ['all', ...Object.keys(categoryCounts)];
+  // 모든 카테고리 목록 생성 (동적으로 추출)
+  const allCategories = ['all', ...getAllCategories(portfolios)];
   
   // 필터링 및 정렬된 프로젝트 목록
   const filteredProjects = portfolios
@@ -188,7 +206,7 @@ function App() {
                   </div>
                   
                   {/* 정렬 드롭다운 */}
-                  <div className="w-full md:w-1/3">
+                  <div className="w-full md:w-1/3 md:pr-4">
                     <select
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                       value={sortBy}
@@ -308,18 +326,46 @@ function App() {
                 </div>
               )}
               
+              {/* 로딩 상태 표시 */}
+              {isLoading && (
+                <div className="text-center py-12">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                  <p className="text-gray-600 dark:text-gray-300">포트폴리오 데이터를 불러오는 중...</p>
+                </div>
+              )}
+
+              {/* 에러 상태 표시 */}
+              {error && (
+                <div className="text-center py-12">
+                  <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-md mx-auto">
+                    <div className="text-red-800 dark:text-red-200 mb-2">
+                      ⚠️ 데이터 로드 오류
+                    </div>
+                    <p className="text-red-600 dark:text-red-300 text-sm mb-4">{error}</p>
+                    <button
+                      onClick={() => window.location.reload()}
+                      className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm"
+                    >
+                      페이지 새로고침
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {/* 검색 결과 표시 */}
-              <div className="text-center mb-6">
-                <p className="text-gray-600 dark:text-gray-300">
-                  총 {filteredProjects.length}개의 프로젝트가 표시됩니다
-                  {(searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedGeminiFilters.length > 0) && 
-                    ` (전체 ${portfolios.length}개 중)`
-                  }
-                </p>
-              </div>
+              {!isLoading && !error && (
+                <div className="text-center mb-6">
+                  <p className="text-gray-600 dark:text-gray-300">
+                    총 {filteredProjects.length}개의 프로젝트가 표시됩니다
+                    {(searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedGeminiFilters.length > 0) && 
+                      ` (전체 ${portfolios.length}개 중)`
+                    }
+                  </p>
+                </div>
+              )}
               
               {/* 프로젝트 카드들 - 구조화된 마크업 */}
-              {filteredProjects.length > 0 ? (
+              {!isLoading && !error && filteredProjects.length > 0 && (
                 <div role="feed" aria-label="프로젝트 목록" className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                   {filteredProjects.map((project) => (
                     <article key={project.id}>
@@ -327,7 +373,10 @@ function App() {
                     </article>
                   ))}
                 </div>
-              ) : (
+              )}
+              
+              {/* 검색 결과 없음 메시지 */}
+              {!isLoading && !error && filteredProjects.length === 0 && (
                 <div className="text-center py-12">
                   <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

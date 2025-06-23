@@ -22,6 +22,25 @@ import {
 import { getAuth } from 'firebase/auth';
 
 /**
+ * 환경변수 접근 함수
+ * 브라우저 환경(Vite)과 Node.js 환경 모두 지원
+ */
+const getEnvVar = (key: string): string | undefined => {
+  // Node.js 환경 (process.env 사용)
+  if (typeof process !== 'undefined' && process.env) {
+    return process.env[key];
+  }
+  
+  // 브라우저 환경 (import.meta.env 사용)
+  try {
+    // @ts-ignore - import.meta.env는 브라우저에서만 사용 가능
+    return import.meta.env[key];
+  } catch {
+    return undefined;
+  }
+};
+
+/**
  * 환경변수 검증
  */
 const validateFirebaseConfig = () => {
@@ -34,7 +53,7 @@ const validateFirebaseConfig = () => {
     'VITE_FIREBASE_APP_ID'
   ];
 
-  const missingVars = requiredEnvVars.filter(varName => !import.meta.env[varName]);
+  const missingVars = requiredEnvVars.filter(varName => !getEnvVar(varName));
   
   if (missingVars.length > 0) {
     console.error('❌ Firebase 환경변수가 누락되었습니다:', missingVars);
@@ -52,12 +71,12 @@ validateFirebaseConfig();
  * 환경변수에서 Firebase 설정값을 가져와 초기화
  */
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+  apiKey: getEnvVar('VITE_FIREBASE_API_KEY')!,
+  authDomain: getEnvVar('VITE_FIREBASE_AUTH_DOMAIN')!,
+  projectId: getEnvVar('VITE_FIREBASE_PROJECT_ID')!,
+  storageBucket: getEnvVar('VITE_FIREBASE_STORAGE_BUCKET')!,
+  messagingSenderId: getEnvVar('VITE_FIREBASE_MESSAGING_SENDER_ID')!,
+  appId: getEnvVar('VITE_FIREBASE_APP_ID')!
 };
 
 console.log('🔧 Firebase 설정:', {
@@ -84,7 +103,7 @@ export const auth = getAuth(app);
 
 // 개발 환경에서 Firestore 에뮬레이터 연결 (선택사항)
 // 에뮬레이터를 사용하려면 VITE_FIREBASE_USE_EMULATOR=true 설정
-if (import.meta.env.VITE_FIREBASE_USE_EMULATOR === 'true') {
+if (getEnvVar('VITE_FIREBASE_USE_EMULATOR') === 'true') {
   try {
     connectFirestoreEmulator(db, 'localhost', 8080);
     console.log('🔧 Firestore 에뮬레이터에 연결됨');
