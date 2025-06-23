@@ -1,9 +1,11 @@
 import { Header, Hero, ProjectCard } from './components';
+import Board from './components/Board';
 import { PortfolioItem, GeminiApiStatus } from './types/portfolio';
 import portfolioData from './data/portfolios.json';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { inject as injectAnalytics } from '@vercel/analytics';
+import { AuthProvider } from './contexts/AuthContext';
 
 /**
  * DevCanvas 메인 애플리케이션 컴포넌트
@@ -12,6 +14,9 @@ import { inject as injectAnalytics } from '@vercel/analytics';
 function App() {
   // 포트폴리오 데이터 로드
   const portfolios: PortfolioItem[] = portfolioData as PortfolioItem[];
+  
+  // 현재 페이지 상태 ('portfolio' | 'board')
+  const [currentPage, setCurrentPage] = useState<'portfolio' | 'board'>('portfolio');
   
   // 검색 및 정렬 상태
   const [searchTerm, setSearchTerm] = useState('');
@@ -80,6 +85,23 @@ function App() {
     setSelectedCategory('all');
     setSelectedGeminiFilters([]);
   };
+
+  // 네비게이션 핸들러
+  const handleNavigationClick = (href: string) => {
+    if (href === '#board') {
+      setCurrentPage('board');
+    } else if (href === '#home' || href === '#projects') {
+      setCurrentPage('portfolio');
+      // 기본 스크롤 처리
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
   
   // 페이지 로드 시 접근성 개선 및 분석 초기화
   useEffect(() => {
@@ -91,7 +113,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <AuthProvider>
       {/* 페이지별 SEO 메타데이터 (react-helmet-async 사용) */}
       <Helmet>
         <title>DevCanvas - 웹앱 & 웹게임 허브 | 자동진행형 게임 플랫폼</title>
@@ -100,10 +122,15 @@ function App() {
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <Header />
+        <Header onNavigationClick={handleNavigationClick} />
         
         {/* 메인 콘텐츠 - 시맨틱 태그 강화 */}
         <main id="main-content">
+          {currentPage === 'board' ? (
+            <Board />
+          ) : (
+            <>
+              {/* 포트폴리오 콘텐츠 */}
           {/* Hero 섹션 - 홈과 프로젝트 소개를 통합 */}
           <Hero totalProjects={portfolios.length} />
 
@@ -325,6 +352,8 @@ function App() {
               </div>
             </div>
           </section>
+            </>
+          )}
         </main>
         
         {/* 푸터 - 구조화된 마크업 및 링크 개선 */}
@@ -349,7 +378,7 @@ function App() {
           </div>
         </footer>
       </div>
-    </>
+    </AuthProvider>
   )
 }
 

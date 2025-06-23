@@ -23,4 +23,7 @@ export interface HeaderProps extends BaseComponentProps {
   
   /** 로고 클릭 시 실행될 함수 */
   onLogoClick?: () => void;
+  
+  /** 네비게이션 클릭 시 실행될 함수 */
+  onNavigationClick?: (href: string) => void;
 } 
