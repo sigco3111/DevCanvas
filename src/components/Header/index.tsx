@@ -78,8 +78,10 @@ const Header: React.FC<HeaderProps> = React.memo(({
   const handleLoginClick = async () => {
     try {
       await login();
-    } catch (error: any) {
-      alert(error.message || '로그인 중 오류가 발생했습니다.');
+    } catch (error: unknown) {
+      // 에러 타입 확인 후 메시지 추출
+      const errorMessage = error instanceof Error ? error.message : '로그인 중 오류가 발생했습니다.';
+      alert(errorMessage);
     }
   };
 
@@ -89,8 +91,10 @@ const Header: React.FC<HeaderProps> = React.memo(({
   const handleLogoutClick = async () => {
     try {
       await logout();
-    } catch (error: any) {
-      alert(error.message || '로그아웃 중 오류가 발생했습니다.');
+    } catch (error: unknown) {
+      // 에러 타입 확인 후 메시지 추출
+      const errorMessage = error instanceof Error ? error.message : '로그아웃 중 오류가 발생했습니다.';
+      alert(errorMessage);
     }
   };
 

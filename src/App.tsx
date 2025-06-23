@@ -102,6 +102,22 @@ function App() {
       }
     }
   };
+
+  /**
+   * 로고 클릭 핸들러 - 홈화면으로 이동
+   */
+  const handleLogoClick = () => {
+    // 현재 게시판 페이지에 있다면 포트폴리오 페이지로 이동
+    if (currentPage === 'board') {
+      setCurrentPage('portfolio');
+    }
+    
+    // 페이지 최상단으로 스크롤
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // 필터 초기화 (선택사항)
+    resetFilters();
+  };
   
   // 페이지 로드 시 접근성 개선 및 분석 초기화
   useEffect(() => {
@@ -122,7 +138,10 @@ function App() {
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <Header onNavigationClick={handleNavigationClick} />
+        <Header 
+          onNavigationClick={handleNavigationClick}
+          onLogoClick={handleLogoClick}
+        />
         
         {/* 메인 콘텐츠 - 시맨틱 태그 강화 */}
         <main id="main-content">
