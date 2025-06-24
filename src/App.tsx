@@ -169,7 +169,7 @@ function App() {
   // 페이지 로드 시 접근성 개선 및 분석 초기화
   useEffect(() => {
     // 스크린 리더용 페이지 정보 업데이트
-    document.title = "DevCanvas - 웹앱 & 웹게임 허브 | 자동진행형 게임 플랫폼";
+    document.title = "DevCanvas - 웹앱 & 웹게임 오픈소스 허브";
     
     // Vercel Analytics 초기화
     injectAnalytics();
@@ -179,8 +179,8 @@ function App() {
     <AuthProvider>
       {/* 페이지별 SEO 메타데이터 (react-helmet-async 사용) */}
       <Helmet>
-        <title>DevCanvas - 웹앱 & 웹게임 허브 | 자동진행형 게임 플랫폼</title>
-        <meta name="description" content="DevCanvas에서 다양한 자동진행형 게임과 앱을 공유합니다." />
+        <title>DevCanvas - 웹앱 & 웹게임 오픈소스 허브</title>
+        <meta name="description" content="DevCanvas에서 다양한 게임과 앱을 오픈소스로 공유합니다." />
         <link rel="canonical" href="https://devcanvas.vercel.app/" />
       </Helmet>
       
@@ -208,7 +208,7 @@ function App() {
                   프로젝트 둘러보기
                 </h1>
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                  다양한 자동진행형 게임과 웹 애플리케이션을 체험해보세요
+                  다양한 게임과 웹 애플리케이션을 체험해보세요
                 </p>
               </header>
               
@@ -445,7 +445,7 @@ function App() {
                 <dl className="space-y-6">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">DevCanvas는 어떤 플랫폼인가요?</dt>
-                    <dd className="mt-2 text-gray-600 dark:text-gray-300">DevCanvas는 자동진행형 게임과 웹 애플리케이션을 제공하는 플랫폼입니다. 사용자는 다양한 게임과 앱을 무료로 사용할 수 있고, 모든 프로젝트의 소스코드는 오픈되어 있습니다.</dd>
+                    <dd className="mt-2 text-gray-600 dark:text-gray-300">DevCanvas는 게임과 웹 애플리케이션을 오픈소스로 제공하는 플랫폼입니다. 사용자는 다양한 게임과 앱을 무료로 사용할 수 있고, 모든 프로젝트의 소스코드는 오픈되어 있습니다.</dd>
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
                     <dt className="font-semibold text-gray-900 dark:text-white">게임은 어떻게 플레이하나요?</dt>

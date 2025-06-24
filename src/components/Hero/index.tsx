@@ -7,8 +7,8 @@ import type { HeroProps } from './types';
  */
 const Hero: React.FC<HeroProps> = React.memo(({
   title = 'DevCanvas',
-  subtitle = '웹앱 & 웹게임 허브',
-  description = '다양한 자동진행형 게임과 웹 애플리케이션',
+  subtitle = '웹앱 & 웹게임 오픈소스 허브',
+  description = '다양한 게임과 웹 애플리케이션을 오픈소스로 제공하는 플랫폼입니다.',
   disableGradient = false,
   className = '',
   totalProjects,
