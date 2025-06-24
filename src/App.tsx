@@ -1,4 +1,4 @@
-import { Header, Hero, ProjectCard } from './components';
+import { Header, Hero, ProjectCard, Pagination } from './components';
 import Board from './components/Board';
 import { PortfolioItem, GeminiApiStatus } from './types/portfolio';
 import { getPortfolios, getAllCategories, getCategoryCounts } from './utils/portfolio';
@@ -27,6 +27,10 @@ function App() {
   
   // Gemini API 필터 상태
   const [selectedGeminiFilters, setSelectedGeminiFilters] = useState<GeminiApiStatus[]>([]);
+  
+  // 페이지네이션 상태
+  const [currentProjectPage, setCurrentProjectPage] = useState(1);
+  const itemsPerPage = 20;
   
   // 포트폴리오 데이터 로드
   useEffect(() => {
@@ -97,12 +101,37 @@ function App() {
       }
     });
 
+  // 페이지네이션을 위한 현재 페이지 프로젝트들 계산
+  const totalFilteredProjects = filteredProjects.length;
+  const startIndex = (currentProjectPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentPageProjects = filteredProjects.slice(startIndex, endIndex);
+  
+  // 페이지 변경 핸들러
+  const handlePageChange = (page: number) => {
+    setCurrentProjectPage(page);
+    // 페이지 변경 시 프로젝트 섹션 상단으로 스크롤
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // 필터 초기화 함수
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedCategory('all');
     setSelectedGeminiFilters([]);
+    setCurrentProjectPage(1); // 페이지를 첫 번째로 리셋
   };
+  
+  // 필터 변경 시 페이지 리셋 (useEffect 훅들)
+  useEffect(() => {
+    setCurrentProjectPage(1);
+  }, [searchTerm, selectedCategory, selectedGeminiFilters, sortBy]);
 
   // 네비게이션 핸들러
   const handleNavigationClick = (href: string) => {
@@ -356,7 +385,7 @@ function App() {
               {!isLoading && !error && (
                 <div className="text-center mb-6">
                   <p className="text-gray-600 dark:text-gray-300">
-                    총 {filteredProjects.length}개의 프로젝트가 표시됩니다
+                    총 {totalFilteredProjects}개의 프로젝트가 있습니다
                     {(searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedGeminiFilters.length > 0) && 
                       ` (전체 ${portfolios.length}개 중)`
                     }
@@ -365,18 +394,28 @@ function App() {
               )}
               
               {/* 프로젝트 카드들 - 구조화된 마크업 */}
-              {!isLoading && !error && filteredProjects.length > 0 && (
-                <div role="feed" aria-label="프로젝트 목록" className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                  {filteredProjects.map((project) => (
-                    <article key={project.id}>
-                      <ProjectCard project={project} />
-                    </article>
-                  ))}
-                </div>
+              {!isLoading && !error && currentPageProjects.length > 0 && (
+                <>
+                  <div role="feed" aria-label="프로젝트 목록" className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {currentPageProjects.map((project) => (
+                      <article key={project.id}>
+                        <ProjectCard project={project} />
+                      </article>
+                    ))}
+                  </div>
+                  
+                  {/* 페이지네이션 */}
+                  <Pagination
+                    currentPage={currentProjectPage}
+                    totalItems={totalFilteredProjects}
+                    itemsPerPage={itemsPerPage}
+                    onPageChange={handlePageChange}
+                  />
+                </>
               )}
               
               {/* 검색 결과 없음 메시지 */}
-              {!isLoading && !error && filteredProjects.length === 0 && (
+              {!isLoading && !error && totalFilteredProjects === 0 && (
                 <div className="text-center py-12">
                   <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

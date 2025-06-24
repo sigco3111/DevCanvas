@@ -12,4 +12,7 @@ export { default as Hero } from './Hero';
 export type { HeroProps, CTAButton } from './Hero/types';
 
 // ProjectCard 컴포넌트
-export { default as ProjectCard } from './ProjectCard'; 
+export { default as ProjectCard } from './ProjectCard';
+
+// Pagination 컴포넌트
+export { default as Pagination } from './Pagination'; 
