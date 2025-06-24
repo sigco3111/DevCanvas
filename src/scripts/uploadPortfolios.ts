@@ -3,8 +3,8 @@
  * Node.js 환경에서 실행됩니다.
  */
 
-import { db, collection, addDoc, getDocs, doc, setDoc } from '../lib/firebase-node';
-import { addPortfolio, getPortfolios } from '../services/portfolioService-node';
+import { db, collection, getDocs, doc, setDoc } from '../lib/firebase-node';
+import { getPortfolios } from '../services/portfolioService-node';
 import portfolioData from '../data/portfolios.json';
 import { PortfolioItem } from '../types/portfolio';
 

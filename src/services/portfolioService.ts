@@ -8,8 +8,7 @@ import {
   deleteDoc,
   query,
   orderBy,
-  where,
-  serverTimestamp
+  where
 } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { PortfolioItem } from '../types/portfolio';
