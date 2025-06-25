@@ -20,7 +20,7 @@ export function isValidPortfolioItem(item: unknown): item is PortfolioItem {
     (portfolio.category === 'game' || portfolio.category === 'webapp') &&
     Array.isArray(portfolio.technologies) &&
     portfolio.technologies.every((tech) => typeof tech === 'string') &&
-    typeof portfolio.liveUrl === 'string' &&
+    (portfolio.liveUrl === undefined || typeof portfolio.liveUrl === 'string') &&
     typeof portfolio.featured === 'boolean' &&
     typeof portfolio.createdAt === 'string' &&
     (portfolio.imageUrl === undefined || typeof portfolio.imageUrl === 'string') &&

@@ -44,8 +44,8 @@ export interface PortfolioItem {
   /** 사용된 기술 스택 배열 */
   technologies: string[];
   
-  /** 라이브 사이트 URL */
-  liveUrl: string;
+  /** 라이브 사이트 URL (선택적) */
+  liveUrl?: string;
   
   /** 프로젝트 이미지 URL (선택적) */
   imageUrl?: string;
