@@ -9,16 +9,16 @@ const addNewPortfolio = async () => {
   try {
     // 새 포트폴리오 데이터 정의 (새로운 카테고리 "실험" 추가 테스트)
     const newPortfolio: Omit<PortfolioItem, 'id'> = {
-      title: "테라리움",
-      description: "이 몰입형 시뮬레이션에서 당신은 자신만의 작은 3D 테라리움을 조성하고, 다양한 생물과 식물을 추가하며 시간이 지남에 따라 생태계가 자체적으로 성장하고 변화하며 복잡한 상호작용을 펼치는 모습을 관찰할 수 있습니다.",
-      category: "육성", // 새로운 카테고리 추가!
-      technologies: ["React", "TypeScript", "Recharts", "Three.js"],
-      liveUrl: "https://terrarium-flame.vercel.app/",
+      title: "수박 게임 3D",
+      description: "3D 과일 합치기 퍼즐 게임입니다. 인기 있는 수박 게임에서 영향을 받아 3차원 환경으로 재구성했습니다. 과일을 떨어뜨리고, 같은 과일끼리 합쳐 더 큰 과일을 만들며 최고 점수에 도전하세요!",
+      category: "퍼즐", // 새로운 카테고리 추가!
+      technologies: ["React", "TypeScript", "Three.js", "cannon-es"],
+      liveUrl: "https://watermelon-tan-nu.vercel.app/",
       featured: true, // 추천 프로젝트로 설정
-      createdAt: "2025-06-25",
-      updatedAt: "2025-06-25",
-      githubUrl: "https://github.com/sigco3111/terrarium", // 선택사항
-      developmentTools: ["Google AI Studio", "Cursor", "Claude"], // 선택사항
+      createdAt: "2025-06-26",
+      updatedAt: "2025-06-26",
+      githubUrl: "https://github.com/sigco3111/watermelon", // 선택사항
+      developmentTools: ["Google AI Studio", "Cursor"], // 선택사항
       geminiApiStatus: "none" // none, optional, required 중 선택
     };
 
