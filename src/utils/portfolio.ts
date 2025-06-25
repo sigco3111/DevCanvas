@@ -1,7 +1,6 @@
 import type { PortfolioItem, PortfolioCategory } from '../types';
 import { CategoryUtils } from '../types/portfolio';
 import { getPortfolios as getPortfoliosFromFirebase } from '../services/portfolioService';
-import portfoliosData from '../data/portfolios.json' assert { type: 'json' };
 
 /**
  * 포트폴리오 데이터 타입 가드 함수
@@ -31,7 +30,7 @@ export function isValidPortfolioItem(item: unknown): item is PortfolioItem {
 
 /**
  * 포트폴리오 데이터를 가져오는 함수
- * Firebase에서 데이터를 가져오고, 실패시 로컬 JSON 파일을 사용
+ * Firebase에서 데이터를 가져오고, 실패시 빈 배열을 반환
  */
 export async function getPortfolios(): Promise<PortfolioItem[]> {
   try {
@@ -40,31 +39,22 @@ export async function getPortfolios(): Promise<PortfolioItem[]> {
     console.log('✅ Firebase에서 포트폴리오 데이터 가져오기 성공');
     return portfolios;
   } catch (error) {
-    console.warn('⚠️ Firebase에서 데이터 가져오기 실패, 로컬 JSON 파일 사용:', error);
+    console.warn('⚠️ Firebase에서 데이터 가져오기 실패:', error);
+    console.warn('빈 배열을 반환합니다. Firebase 연결을 확인해주세요.');
     
-    // 로컬 JSON 파일 사용
-    const validPortfolios = (portfoliosData as unknown[]).filter(isValidPortfolioItem);
-    
-    if (validPortfolios.length !== portfoliosData.length) {
-      console.warn('일부 포트폴리오 데이터가 유효하지 않습니다.');
-    }
-    
-    return validPortfolios;
+    // Firebase 연결 실패 시 빈 배열 반환
+    return [];
   }
 }
 
 /**
- * 동기적으로 로컬 포트폴리오 데이터를 가져오는 함수 (레거시 호환용)
- * 새로운 코드에서는 getPortfolios() 비동기 함수를 사용하세요
+ * 동기적으로 빈 배열을 반환하는 함수 (레거시 호환용)
+ * 실제 데이터가 필요한 경우 getPortfolios() 비동기 함수를 사용하세요
+ * @deprecated Firebase만 사용하므로 빈 배열을 반환합니다. getPortfolios()를 사용하세요.
  */
 export function getPortfoliosSync(): PortfolioItem[] {
-  const validPortfolios = (portfoliosData as unknown[]).filter(isValidPortfolioItem);
-  
-  if (validPortfolios.length !== portfoliosData.length) {
-    console.warn('일부 포트폴리오 데이터가 유효하지 않습니다.');
-  }
-  
-  return validPortfolios;
+  console.warn('⚠️ getPortfoliosSync()는 더 이상 지원되지 않습니다. getPortfolios()를 사용하세요.');
+  return [];
 }
 
 /**

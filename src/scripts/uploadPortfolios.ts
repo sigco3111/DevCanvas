@@ -5,16 +5,30 @@
 
 import { db, collection, getDocs, doc, setDoc } from '../lib/firebase-node';
 import { getPortfolios } from '../services/portfolioService-node';
-import portfolioData from '../data/portfolios.json';
+// import portfolioData from '../data/portfolios.json'; // 파일이 존재하지 않음
 import { PortfolioItem } from '../types/portfolio';
+
+// 현재 portfolios.json 파일이 없으므로 빈 배열 사용
+// 실제 데이터 업로드가 필요한 경우, Firebase에서 데이터를 가져와서 사용하세요
+const portfolioData: PortfolioItem[] = [];
 
 /**
  * 포트폴리오 데이터를 Firebase에 업로드하는 함수
  * 기존 데이터는 덮어쓰기로 처리됩니다.
+ * 
+ * ⚠️ 현재 portfolios.json 파일이 없으므로 빈 배열을 사용합니다.
+ * 실제 데이터 업로드가 필요한 경우, Firebase에서 데이터를 가져와서 사용하세요.
  */
 export const uploadPortfoliosToFirebase = async (): Promise<void> => {
   try {
     console.log('🚀 포트폴리오 데이터 Firebase 업로드 시작...');
+    
+    if (portfolioData.length === 0) {
+      console.log('⚠️ 업로드할 포트폴리오 데이터가 없습니다.');
+      console.log('📝 portfolios.json 파일을 생성하거나 Firebase에서 데이터를 가져와서 사용하세요.');
+      return;
+    }
+    
     console.log(`📊 업로드할 포트폴리오 수: ${portfolioData.length}개`);
     
     const portfoliosRef = collection(db, 'portfolios');
