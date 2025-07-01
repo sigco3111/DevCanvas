@@ -255,7 +255,9 @@ function App() {
               <div className="mb-8 max-w-4xl mx-auto">
                 <h2 className="sr-only">카테고리별 게임</h2>
                 <ul className="flex flex-wrap justify-center gap-4">
-                  {allCategories.map((category) => (
+                  {allCategories
+                    .filter(category => category === 'all' || (categoryCounts[category] && categoryCounts[category] > 0))
+                    .map((category) => (
                     <li key={category}>
                       <button
                         onClick={() => setSelectedCategory(category)}

@@ -1,73 +1,8 @@
-[
-  {
-    "id": "age-of-exploration-lite",
-    "title": "대항해시대 Lite",
-    "description": "대항해시대2의 영향을 받아 제작된 웹 기반 탐험 및 교역 시뮬레이션 게임입니다. 플레이어는 대항해시대의 선장이 되어 미지의 바다를 탐험하고, 다양한 항구와 교역하며 부를 쌓고, 여러 도전적인 이벤트에 직면하게 됩니다.",
-    "category": "RPG",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts"
-    ],
-    "liveUrl": "https://age-of-exploration-lite.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/age-of-exploration-lite",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "none"
-  },
-  {
-    "id": "wobbly-tower",
-    "title": "흔들흔들 탑 쌓기",
-    "description": "다양한 모양의 블록을 중력을 거슬러 최대한 높이 쌓는 3D 물리 기반 게임입니다. 블록이 무너지지 않고 가장 높은 탑을 쌓아 최고 점수를 달성하세요!",
-    "category": "퍼즐",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Three.js",
-      "cannon-es "
-    ],
-    "liveUrl": "https://wobbly-tower.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/wobbly-tower",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "none"
-  },
-  {
-    "id": "castle-breaker",
-    "title": "캐슬 브레이커",
-    "description": "플레이어가 발사체를 사용하여 블록으로 만들어진 건물과 황금 블록을 무너뜨리는 3D 물리 기반 게임입니다. 사용자가 직접 레벨 디자인을 할 수 있는 툴을 제공하며, Gemini API를 활용한 AI 레벨 생성 기능도 포함하고 있습니다.",
-    "category": "기타",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Three.js",
-      "cannon-es "
-    ],
-    "liveUrl": "https://castle-breaker.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/castle-breaker",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-      ],
-    "geminiApiStatus": "none"
-  },
+[ 
   {
     "id": "pixedit",
     "title": "픽스에딧",
-    "description": "플레이어가 발사체를 사용하여 블록으로 만들어진 건물과 황금 블록을 무너뜨리는 3D 물리 기반 게임입니다. 사용자가 직접 레벨 디자인을 할 수 있는 툴을 제공하며, Gemini API를 활용한 AI 레벨 생성 기능도 포함하고 있습니다.",
+    "description": "웹 기반 이미지 편집기로, 포토샵과 유사한 기능을 제공하여 사용자가 이미지를 업로드하고 다양한 도구와 필터를 사용하여 이미지를 조작하고 향상시킬 수 있습니다.",
     "category": "App",
     "technologies": [
       "React",
@@ -84,29 +19,8 @@
       "Cursor"
     ],
     "geminiApiStatus": "optional"
-  },{
-    "id": "3d-physics-lab",
-    "title": "3D 물리 실험실",
-    "description": "3D 물리 실험실은 사용자가 다양한 3D 객체를 만들고, 물리적 속성을 조정하며, 실시간으로 시뮬레이션 결과를 관찰할 수 있는 대화형 웹 애플리케이션입니다. Google Gemini API를 활용하여 자연어 프롬프트를 통해 복잡한 장면을 자동으로 생성하는 기능을 제공합니다. ",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Three.js",
-      "cannon-es ",
-      "Google Gemini API"
-    ],
-    "liveUrl": "https://3d-physics-lab-fawn.vercel.app/",
-    "featured": true,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/pixedit",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "optional"
-  },{
+  },
+  {
     "id": "core-breaker",
     "title": "코어 브레이커",
     "description": "플레이어가 다양한 투사체를 사용하여 역동적으로 움직이는 복합 구조물(코어)을 파괴하는 1인칭 슈팅(FPS) 게임입니다. 스테이지를 클리어하며 얻는 '조각'을 사용하여 자신의 능력치와 무기를 업그레이드하고, 점점 더 어려워지는 도전에 맞서게 됩니다. [PC전용 입니다.]",
@@ -128,6 +42,29 @@
     ],
     "geminiApiStatus": "none"
   }, 
+  {
+    "id": "3d-physics-lab",
+    "title": "3D 물리 실험실",
+    "description": "3D 물리 실험실은 사용자가 다양한 3D 객체를 만들고, 물리적 속성을 조정하며, 실시간으로 시뮬레이션 결과를 관찰할 수 있는 대화형 웹 애플리케이션입니다. Google Gemini API를 활용하여 자연어 프롬프트를 통해 복잡한 장면을 자동으로 생성하는 기능을 제공합니다. ",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Three.js",
+      "cannon-es ",
+      "Google Gemini API"
+    ],
+    "liveUrl": "https://3d-physics-lab-fawn.vercel.app/",
+    "featured": true,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/pixedit",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "optional"
+  },
   {
     "id": "core-markdown-editor",
     "title": "코어 마크다운 편집기",
