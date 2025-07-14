@@ -153,20 +153,28 @@ class DevCanvas:
       {/* 터미널 스타일 배경 */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* 터미널 그리드 패턴 */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-12 gap-4 h-full">
-            {Array.from({ length: 48 }, (_, i) => (
-              <div key={i} className="border-l border-green-400/30 h-full"></div>
-            ))}
+        {!disableGradient && (
+          <div className="absolute inset-0 opacity-10">
+            <div className="grid grid-cols-12 gap-4 h-full">
+              {Array.from({ length: 48 }, (_, i) => (
+                <div key={i} className="border-l border-green-400/30 h-full"></div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         
         {/* 스캔라인 효과 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+        {!disableGradient && (
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+        )}
         
         {/* 글로우 효과 */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {!disableGradient && (
+          <>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </>
+        )}
       </div>
 
       {/* 메인 콘텐츠 */}
@@ -235,6 +243,11 @@ class DevCanvas:
               <p className="text-green-400 mt-2">
                 {title} &gt; {subtitle}
               </p>
+              {description && (
+                <p className="text-gray-400 mt-2 text-sm">
+                  $ echo "{description}"
+                </p>
+              )}
             </div>
           </div>
         </div>
