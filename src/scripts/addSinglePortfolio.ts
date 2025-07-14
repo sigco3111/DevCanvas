@@ -9,17 +9,17 @@ const addNewPortfolio = async () => {
   try {
     // 새 포트폴리오 데이터 정의 (새로운 카테고리 "실험" 추가 테스트)
     const newPortfolio: Omit<PortfolioItem, 'id'> = {
-      title: "캐슬 브레이커",
-      description: "플레이어가 발사체를 사용하여 블록으로 만들어진 건물과 황금 블록을 무너뜨리는 3D 물리 기반 게임입니다. 사용자가 직접 레벨 디자인을 할 수 있는 툴을 제공하며, Gemini API를 활용한 AI 레벨 생성 기능도 포함하고 있습니다.",
-      category: "기타", // 새로운 카테고리 추가!
-      technologies: ["React", "TypeScript", "Three.js", "cannon-es"],
-      liveUrl: "https://castle-breaker.vercel.app/",
+      title: "Windows 11 스타일 게시판",
+      description: "Windows 11 인터페이스에서 영향을 받은 온라인 게시판 시스템입니다. 사용자들은 다양한 주제에 대한 게시물을 작성하고, 공유하며 커뮤니티를 형성할 수 있습니다. 데스크톱 환경을 시뮬레이션하는 UI를 통해 친숙하고 직관적인 사용자 경험을 제공합니다.",
+      category: "App", // 새로운 카테고리 추가!
+      technologies: ["React", "TypeScript"],
+      liveUrl: "https://win11-board.vercel.app/",
       featured: true, // 추천 프로젝트로 설정
-      createdAt: "2025-07-02",
-      updatedAt: "2025-07-02",
-      githubUrl: "https://github.com/sigco3111/castle-breaker", // 선택사항
-      developmentTools: ["Google AI Studio", "Cursor"], // 선택사항
-      geminiApiStatus: "optional" // none, optional, required 중 선택
+      createdAt: "2025-07-15",
+      updatedAt: "2025-07-15",
+      githubUrl: "https://github.com/sigco3111/win11-board", // 선택사항
+      developmentTools: ["Cursor"], // 선택사항
+      geminiApiStatus: "none" // none, optional, required 중 선택
     };
 
     console.log('🚀 새 포트폴리오 추가 시작...');
