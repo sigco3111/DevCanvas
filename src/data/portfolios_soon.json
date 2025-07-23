@@ -1,103 +1,4 @@
-[ 
-  {
-    "id": "insight-pick",
-    "title": "인사이트픽",
-    "description": "경제 지표와 시장 동향을 분석하여 사용자가 설정한 전략에 맞는 방식으로 주식을 추천하는 웹 애플리케이션입니다. 개인 투자자(초보부터 전문가까지)가 재정 목표와 위험 허용 범위에 따라 AI가 생성한 포트폴리오 제안을 바탕으로 데이터 기반 투자 결정을 내릴 수 있도록 돕는 것을 목표로 합니다.",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Recharts",
-      "Google Gemini API"
-    ],
-    "liveUrl": "https://insight-pick.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/insight-pick",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "required"
-  }, 
-  {
-    "id": "relationship-visualizer",
-    "title": "인물 관계도 시각화 도구",
-    "description": "창작물(소설, 드라마, 영화, 게임 등)의 인물 관계를 시각적으로 표현하는 웹 어플리케이션입니다. 작품의 제목이나 내용을 입력하면 AI를 통해 주요 인물과 그들 간의 관계를 분석하여 그래프로 시각화해줍니다.",
-    "technologies": [
-      "React",
-      "Claude API"
-    ],
-    "liveUrl": "https://json-flow.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/json-flow",
-    "developmentTools": [
-      "Claude Artifact"
-    ],
-    "geminiApiStatus": "required"
-  }, 
-  {
-    "id": "ubuntu-board",
-    "title": "Ubuntu-BOARD",
-    "description": "Ubuntu 인터페이스에서 영감을 받은 온라인 게시판 시스템입니다. 사용자들은 다양한 주제에 대한 게시물을 작성하고, 공유하며 커뮤니티를 형성할 수 있습니다. 데스크톱 환경을 시뮬레이션하는 UI를 통해 친숙하고 직관적인 사용자 경험을 제공합니다.",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript"
-    ],
-    "liveUrl": "https://ubuntu-board.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/ubuntu-board",
-    "developmentTools": [
-      "Cursor"
-    ],
-    "geminiApiStatus": "none"
-  },   
-  {
-    "id": "decision-genie",
-    "title": "고민 결정 마법사",
-    "description": "고민 결정 마법사는 사용자의 고민에 대해 객관식 질문을 통해 정보를 수집하고, Google Gemini AI를 활용하여 맞춤형 결정과 그 이유, 장단점, 관련 정보 링크까지 제공하는 의사결정 보조 웹 애플리케이션입니다.",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Google Gemini API"
-    ],
-    "liveUrl": "https://decision-genie.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/insight-pick",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "required"
-  }, 
-  {
-    "id": "winxp-board",
-    "title": "WINXP-BOARD",
-    "description": "Windows XP 인터페이스에서 영감을 받은 온라인 게시판 시스템입니다. 사용자들은 다양한 주제에 대한 게시물을 작성하고, 공유하며 커뮤니티를 형성할 수 있습니다. 데스크톱 환경을 시뮬레이션하는 UI를 통해 친숙하고 직관적인 사용자 경험을 제공합니다.",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript"
-    ],
-    "liveUrl": "https://winxp-board.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/win11-board",
-    "developmentTools": [
-      "Cursor"
-    ],
-    "geminiApiStatus": "none"
-  },   
+[   
   {
     "id": "AI Buy&Sell",
     "title": "",
@@ -113,46 +14,6 @@
     "createdAt": "2025-",
     "updatedAt": "2025-",
     "githubUrl": "https://github.com/sigco3111/insight-pick",
-    "developmentTools": [
-      "Google AI Studio",
-      "Cursor"
-    ],
-    "geminiApiStatus": "required"
-  }, 
-  {
-    "id": "sys8-board",
-    "title": "MacOS8-BOARD",
-    "description": "MacOS8 인터페이스에서 영감을 받은 온라인 게시판 시스템입니다. 사용자들은 다양한 주제에 대한 게시물을 작성하고, 공유하며 커뮤니티를 형성할 수 있습니다. 데스크톱 환경을 시뮬레이션하는 UI를 통해 친숙하고 직관적인 사용자 경험을 제공합니다.",
-    "category": "App",
-    "technologies": [
-      "React",
-      "TypeScript"
-    ],
-    "liveUrl": "https://sys8-board.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/sys8-board",
-    "developmentTools": [
-      "Cursor"
-    ],
-    "geminiApiStatus": "none"
-  }, 
-  {
-    "id": "astrocartography",
-    "title": "에스트로카토그래피 ",
-    "description": "'에스트로카토그래피(Astrocartography)'라는 점성술 기법을 현대적인 웹 기술로 구현한 인터랙티브 애플리케이션입니다. 사용자는 자신의 출생 정보를 기반으로 생성된 개인화된 세계 지도 위에서 행성들의 영향력을 시각적으로 탐색할 수 있습니다. 각 행성선을 클릭하면 Google의 강력한 Gemini AI가 제공하는 깊이 있는 해석을 통해 특정 지역이 자신의 삶에 미칠 수 있는 영향을 알아볼 수 있습니다.",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Leaflet.js",
-      "Google Gemini API"
-    ],
-    "liveUrl": "https://astrocartography.vercel.app/",
-    "featured": false,
-    "createdAt": "2025-",
-    "updatedAt": "2025-",
-    "githubUrl": "https://github.com/sigco3111/astrocartography",
     "developmentTools": [
       "Google AI Studio",
       "Cursor"
@@ -258,5 +119,200 @@
       "Cursor"
     ],
     "geminiApiStatus": "required"
+  },
+  {
+    "id": "token-meter",
+    "title": "토큰 미터기",
+    "description": "텍스트가 어떻게 토큰으로 분할되는지 시각적으로 보여주고, 토큰 및 문자 수를 계산하는 웹 애플리케이션입니다. 이 도구는 대규모 언어 모델(LLM)이 텍스트를 처리하는 방식을 직관적으로 이해하는 데 도움을 주기 위해 제작되었습니다.",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://token-meter.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/token-meter",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "text-sync-check",
+    "title": "텍스트 싱크 체크",
+    "description": "두 개의 텍스트 블록을 나란히 비교하여 추가, 삭제, 수정된 라인을 시각적으로 강조 표시하는 웹 기반 유틸리티입니다. 직관적인 UI와 함께 단어 단위의 세밀한 비교 및 코드 구문 강조와 같은 고급 기능을 제공하여 개발자와 작성자 모두의 생산성을 높일 수 있도록 설계되었습니다.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "LCS"
+    ],
+    "liveUrl": "https://text-sync-check.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/text-sync-check",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "code-map-ruby",
+    "title": "코드맵 생성기",
+    "description": "로컬 프로젝트 폴더를 선택하기만 하면, 파일, 클래스, 함수 간의 관계를 포함한 전체 코드베이스의 계층적 맵을 동적으로 생성합니다. 모든 처리는 브라우저 내에서 안전하게 이루어지며, 여러분의 코드는 절대 외부로 전송되지 않습니다.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "D3.js",
+      "Acorn.js"
+    ],
+    "liveUrl": "https://code-map-ruby.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/code-map",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "code-map-ruby",
+    "title": "SVG 변환기",
+    "description": "클라이언트 측에서 PNG와 SVG 이미지를 상호 변환하는 웹 애플리케이션입니다. 모든 파일 처리는 사용자의 브라우저에서 직접 이루어지므로, 파일이 서버에 업로드되지 않아 개인 정보가 보호됩니다.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "JSZip"
+    ],
+    "liveUrl": "https://svg-converter-three.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/svg-converter",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "commodity-dashboard",
+    "title": "실시간 원자재 대시보드",
+    "description": "야후 파이낸스(Yahoo Finance) 데이터를 활용하여 주요 원자재의 실시간 시세와 고급 기술적 지표를 시각화하는 동적 웹 애플리케이션입니다. (1분단위 갱신)",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://commodity-dashboard.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/commodity-dashboard",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "2048",
+    "title": "2048",
+    "description": "클래식 2048 퍼즐 게임입니다",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://2048-orcin-nine.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/2048",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "number-merge",
+    "title": "넘버링크 (Number Merge)",
+    "description": "플레이어가 번호가 적힌 블록을 떨어뜨려 더 높은 숫자로 합치는, 매력적이고 시각적으로 아름다운 퍼즐 게임입니다. 이 게임은 2048과 테트리스 같은 고전 게임의 전략적 요소를 결합했습니다.",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://number-link-merge.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/number-link-merge",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "number-merge",
+    "title": "리퀴드 소트",
+    "description": "플레이어는 색깔이 있는 액체를 올바른 시험관에 정렬해서 높은 점수를 얻는 게임입니다.",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://liquid-sort.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/liquid-sort",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "candy-crush-saga",
+    "title": "캔디 크러시 사가",
+    "description": "'캔디 크러쉬 사가'를 웹 기술로 구현한 클론 프로젝트입니다. 사용자는 다채로운 캔디를 드래그 앤 드롭하여 3개 이상을 일치시켜 점수를 얻습니다. 현대적인 UI와 부드러운 애니메이션으로 즐거운 게임 경험을 제공하는 것을 목표로 합니다.",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://candy-crush-saga-nu.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/candy-crush-saga",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "sand-blast",
+    "title": "샌트 블라스트",
+    "description": "아래로 떨어지는 블록이 모래 입자로 부서지며, 플레이어는 같은 색상의 입자를 가로로 연결하여 라인을 클리어해야 합니다.",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://sand-blast.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/sand-blast",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
   }
 ] 

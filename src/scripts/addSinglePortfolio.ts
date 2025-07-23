@@ -9,17 +9,17 @@ const addNewPortfolio = async () => {
   try {
     // 새 포트폴리오 데이터 정의 (새로운 카테고리 "실험" 추가 테스트)
     const newPortfolio: Omit<PortfolioItem, 'id'> = {
-      title: "Windows 11 스타일 게시판",
-      description: "Windows 11 인터페이스에서 영향을 받은 온라인 게시판 시스템입니다. 사용자들은 다양한 주제에 대한 게시물을 작성하고, 공유하며 커뮤니티를 형성할 수 있습니다. 데스크톱 환경을 시뮬레이션하는 UI를 통해 친숙하고 직관적인 사용자 경험을 제공합니다.",
+      title: "MacOS8-BOARD",
+      description: "MacOS System8 스타일 게시판",
       category: "App", // 새로운 카테고리 추가!
       technologies: ["React", "TypeScript"],
-      liveUrl: "https://win11-board.vercel.app/",
+      liveUrl: "https://sys8-board.vercel.app/",
       featured: true, // 추천 프로젝트로 설정
-      createdAt: "2025-07-15",
-      updatedAt: "2025-07-15",
-      githubUrl: "https://github.com/sigco3111/win11-board", // 선택사항
+      createdAt: "2025-07-24",
+      updatedAt: "2025-07-24",
+      githubUrl: "https://github.com/sigco3111/sys8-board", // 선택사항
       developmentTools: ["Cursor"], // 선택사항
-      geminiApiStatus: "none" // none, optional, required 중 선택
+      geminiApiStatus: "required" // none, optional, required 중 선택
     };
 
     console.log('🚀 새 포트폴리오 추가 시작...');

@@ -1,4 +1,4 @@
-import { Header, Hero, ProjectCard, Pagination } from './components';
+import { Header, Hero, ProjectCard, Pagination, DashboardModal } from './components';
 import Board from './components/Board';
 import { PortfolioItem, GeminiApiStatus } from './types/portfolio';
 import { getPortfolios, getAllCategories, getCategoryCounts } from './utils/portfolio';
@@ -6,6 +6,11 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { inject as injectAnalytics } from '@vercel/analytics';
 import { AuthProvider } from './contexts/AuthContext';
+import { getDashboardData } from './services/statisticsService';
+import { DashboardData } from './types/dashboard';
+// stagewise 툴바 관련 import 추가
+import { StagewiseToolbar } from '@stagewise/toolbar-react';
+import ReactPlugin from '@stagewise-plugins/react';
 
 /**
  * DevCanvas 메인 애플리케이션 컴포넌트
@@ -31,6 +36,12 @@ function App() {
   // 페이지네이션 상태
   const [currentProjectPage, setCurrentProjectPage] = useState(1);
   const itemsPerPage = 20;
+
+  // 대시보드 상태
+  const [isDashboardOpen, setIsDashboardOpen] = useState(false);
+  const [dashboardData, setDashboardData] = useState<DashboardData | undefined>(undefined);
+  const [isDashboardLoading, setIsDashboardLoading] = useState(false);
+  const [dashboardError, setDashboardError] = useState<string | null>(null);
   
   // 포트폴리오 데이터 로드
   useEffect(() => {
@@ -147,6 +158,9 @@ function App() {
           block: 'start'
         });
       }
+    } else if (href === '#dashboard') {
+      // 대시보드 모달 열기
+      openDashboard();
     }
   };
 
@@ -165,6 +179,51 @@ function App() {
     // 필터 초기화 (선택사항)
     resetFilters();
   };
+
+  /**
+   * 대시보드 모달 열기 및 데이터 로드
+   */
+  const openDashboard = async () => {
+    setIsDashboardOpen(true);
+    
+    if (!dashboardData) {
+      try {
+        setIsDashboardLoading(true);
+        setDashboardError(null);
+        const data = await getDashboardData();
+        setDashboardData(data);
+      } catch (err: any) {
+        console.error('대시보드 데이터 로드 실패:', err);
+        setDashboardError(err.message || '통계 데이터를 불러올 수 없습니다.');
+      } finally {
+        setIsDashboardLoading(false);
+      }
+    }
+  };
+
+  /**
+   * 대시보드 데이터 새로고침
+   */
+  const refreshDashboardData = async () => {
+    try {
+      setIsDashboardLoading(true);
+      setDashboardError(null);
+      const data = await getDashboardData(true); // 강제 새로고침
+      setDashboardData(data);
+    } catch (err: any) {
+      console.error('대시보드 데이터 새로고침 실패:', err);
+      setDashboardError(err.message || '통계 데이터를 불러올 수 없습니다.');
+    } finally {
+      setIsDashboardLoading(false);
+    }
+  };
+
+  /**
+   * 대시보드 모달 닫기
+   */
+  const closeDashboard = () => {
+    setIsDashboardOpen(false);
+  };
   
   // 페이지 로드 시 접근성 개선 및 분석 초기화
   useEffect(() => {
@@ -177,6 +236,9 @@ function App() {
 
   return (
     <AuthProvider>
+      {/* stagewise 툴바 추가 - 개발 모드에서만 렌더링됨 */}
+      <StagewiseToolbar config={{ plugins: [ReactPlugin] }} />
+      
       {/* 페이지별 SEO 메타데이터 (react-helmet-async 사용) */}
       <Helmet>
         <title>DevCanvas - 웹앱 & 웹게임 오픈소스 허브</title>
@@ -487,6 +549,16 @@ function App() {
           </div>
         </footer>
       </div>
+
+      {/* 대시보드 모달 */}
+      <DashboardModal
+        isOpen={isDashboardOpen}
+        onClose={closeDashboard}
+        data={dashboardData}
+        isLoading={isDashboardLoading}
+        error={dashboardError}
+        onRefresh={refreshDashboardData}
+      />
     </AuthProvider>
   )
 }

@@ -15,4 +15,10 @@ export type { HeroProps, CTAButton } from './Hero/types';
 export { default as ProjectCard } from './ProjectCard';
 
 // Pagination 컴포넌트
-export { default as Pagination } from './Pagination'; 
+export { default as Pagination } from './Pagination';
+
+// 방문자 카운터 컴포넌트
+export { default as VisitorCounter } from './VisitorCounter';
+
+// 대시보드 컴포넌트
+export { DashboardModal, StatCard } from './Dashboard'; 

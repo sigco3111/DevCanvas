@@ -1,41 +1,6 @@
 # DevCanvas - 웹앱 & 웹게임 허브
 
-다양한 게임과 웹 애플리케이션을 오픈소스로 제공합니다.
-
-## 🎮 현재 프로젝트
-
-### [World War Simulator](https://world-war-simulator.vercel.app/)
-🛡️ AI 국가들이 벌이는 대규모 전쟁 시뮬레이션 게임. 실시간 전략 게임으로 국가 간의 전투와 동맹을 관찰하며 즐길 수 있습니다.
-
-**기술 스택:** Unity, C#, AI Simulation, Real-time Strategy
-
-### [테트리스 AI 마스터 3D](https://tetris-am3d-7k4p.vercel.app/)
-🧩 3D 테트리스 게임과 AI 플레이 모드를 즐겨보세요. 입체적인 시각적 경험과 함께 AI의 테트리스 플레이를 관찰할 수 있습니다.
-
-**기술 스택:** React, Three.js, TypeScript, AI Algorithms
-
-### [방치형 모험가 노트](https://idle-rpg-one.vercel.app/)
-📖 방치형 RPG 게임으로 캐릭터가 자동 성장하며 던전과 보스를 공략합니다. 장비 강화와 스킬 업그레이드를 통해 더 강해져보세요.
-
-**기술 스택:** React, TypeScript, Game Logic, Progressive Web App
-
-### [지구마블](https://geo-poly.vercel.app/)
-🌍 전 세계 도시를 무대로 한 부루마블 게임! 부동산을 구매하고 임대료를 받으며 경제적 승리를 목표로 하는 전략 보드게임입니다.
-
-**기술 스택:** React, TypeScript, Game Logic, Board Game Mechanics
-
-### [디지털 인생 게임](https://life-game-rho.vercel.app/)
-🎲 인생의 다양한 선택과 결과를 체험하는 디지털 보드게임. 직업 선택부터 인생의 중요한 순간들을 시뮬레이션하며 즐길 수 있습니다.
-
-**기술 스택:** React, TypeScript, Simulation, Interactive Storytelling
-
-### [Royal Secretary](https://royal-secretary.vercel.app/)
-👑 왕실 비서 시뮬레이션 게임. 궁정에서 비서로서 왕실의 일정과 의전을 관리하며 권력과 정치의 세계를 경험해보세요.
-
-**기술 스택:** React, TypeScript, State Management, Interactive UI
-
-### [Enterprise CEO](https://enterprise-ceo.vercel.app/)
-💼 기업 CEO 경영 시뮬레이션. 회사의 경영 전략을 수립하고, 인재를 채용하며, 시장에서 경쟁하여 글로벌 기업으로 성장시켜보세요.
+바이브코딩으로 생성한 다양한 게임과 웹 애플리케이션을 오픈소스로 제공합니다.
 
 **기술 스택:** React, Redux, TypeScript, Business Simulation
 

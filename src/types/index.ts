@@ -22,6 +22,21 @@ export type {
   CTAButton,
 } from '../components/Hero/types';
 
+// 대시보드 관련 타입
+export type {
+  DashboardCategory,
+  StatCardType,
+  ChartType,
+  StatCardProps,
+  NumberStatCardProps,
+  ListStatCardProps,
+  ChartStatCardProps,
+  PortfolioStatistics,
+  BoardStatistics,
+  UserStatistics,
+  DashboardData,
+} from './dashboard';
+
 // 공통 UI 컴포넌트 타입
 export interface BaseComponentProps {
   /** CSS 클래스명 */
