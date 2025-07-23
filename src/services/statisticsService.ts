@@ -6,18 +6,13 @@ import {
   collection, 
   getDocs, 
   query, 
-  where,
-  orderBy, 
-  limit,
   Timestamp,
   doc,
-  getDoc,
-  DocumentData
+  getDoc
 } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { getPortfolios } from './portfolioService';
 import { DashboardData, PortfolioStatistics, BoardStatistics, UserStatistics, TechStackStatistics } from '../types/dashboard';
-import { PortfolioItem } from '../types/portfolio';
 import { BoardPost, PostCategory } from '../types/board';
 
 // 캐시 TTL (Time-to-live) 설정 (밀리초)

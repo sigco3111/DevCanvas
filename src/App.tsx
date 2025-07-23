@@ -39,7 +39,7 @@ function App() {
 
   // 대시보드 상태
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
-  const [dashboardData, setDashboardData] = useState<DashboardData | undefined>(undefined);
+  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [isDashboardLoading, setIsDashboardLoading] = useState(false);
   const [dashboardError, setDashboardError] = useState<string | null>(null);
   

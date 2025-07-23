@@ -3,7 +3,7 @@
  * 카테고리별 데이터 분포를 원형 차트로 시각화
  */
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { BaseChartProps } from '../types';
 
 interface DonutChartProps extends BaseChartProps {
