@@ -43,6 +43,7 @@
     "id": "ai-flowchart",
     "title": "AI 플로우차트 도우미",
     "description": "AI 플로우차트 생성기는 자연어 설명으로 순서도를 손쉽게 만들고, 시각적으로 편집하며, AI의 도움으로 다이어그램을 수정하고 분석할 수 있는 웹 기반 도구입니다. Google의 강력한 Gemini API를 활용하여 아이디어를 즉시 시각적인 플로우차트로 변환합니다.",
+    "category": "개발도구",
     "technologies": [
       "React",
       "TypeScript",
@@ -82,6 +83,7 @@
     "id": "mount-and-blade",
     "title": "마운트 앤 블레이드 Web",
     "description": "Mount & Blade 세계관에서 영향을 받은 텍스트 기반 AI RPG입니다. 아무것도 없는 상태에서 시작하여 당신만의 부대를 만들고, AI가 생성하는 텍스트 기반 모험을 통해 칼라디아의 역사에 당신을 기록하세요.",
+    "category": "RPG",
     "technologies": [
       "React",
       "TypeScript",
@@ -102,6 +104,7 @@
     "id": "codeviz-ai",
     "title": "CodeViz AI(코드분석기)",
     "description": "Google Gemini AI를 사용하여 프로젝트 폴더를 분석하고, 코드베이스에 대한 통찰력 있는 시각화와 분석을 제공하는 지능형 프론트엔드 애플리케이션입니다. 코드를 이해하고, 품질을 평가하며, 개선 영역을 찾는 과정을 혁신적으로 바꾸어보세요.",
+    "category": "개발도구",
     "technologies": [
       "React",
       "TypeScript",
@@ -124,6 +127,7 @@
     "id": "token-meter",
     "title": "토큰 미터기",
     "description": "텍스트가 어떻게 토큰으로 분할되는지 시각적으로 보여주고, 토큰 및 문자 수를 계산하는 웹 애플리케이션입니다. 이 도구는 대규모 언어 모델(LLM)이 텍스트를 처리하는 방식을 직관적으로 이해하는 데 도움을 주기 위해 제작되었습니다.",
+    "category": "개발도구",
     "technologies": [
       "React",
       "TypeScript"
@@ -143,6 +147,7 @@
     "id": "text-sync-check",
     "title": "텍스트 싱크 체크",
     "description": "두 개의 텍스트 블록을 나란히 비교하여 추가, 삭제, 수정된 라인을 시각적으로 강조 표시하는 웹 기반 유틸리티입니다. 직관적인 UI와 함께 단어 단위의 세밀한 비교 및 코드 구문 강조와 같은 고급 기능을 제공하여 개발자와 작성자 모두의 생산성을 높일 수 있도록 설계되었습니다.",
+    "category": "개발도구",
     "technologies": [
       "React",
       "TypeScript",
@@ -163,6 +168,7 @@
     "id": "code-map-ruby",
     "title": "코드맵 생성기",
     "description": "로컬 프로젝트 폴더를 선택하기만 하면, 파일, 클래스, 함수 간의 관계를 포함한 전체 코드베이스의 계층적 맵을 동적으로 생성합니다. 모든 처리는 브라우저 내에서 안전하게 이루어지며, 여러분의 코드는 절대 외부로 전송되지 않습니다.",
+    "category": "개발도구",
     "technologies": [
       "React",
       "TypeScript",
@@ -184,6 +190,7 @@
     "id": "code-map-ruby",
     "title": "SVG 변환기",
     "description": "클라이언트 측에서 PNG와 SVG 이미지를 상호 변환하는 웹 애플리케이션입니다. 모든 파일 처리는 사용자의 브라우저에서 직접 이루어지므로, 파일이 서버에 업로드되지 않아 개인 정보가 보호됩니다.",
+    "category": "개발도구",
     "technologies": [
       "React",
       "TypeScript",
@@ -204,6 +211,7 @@
     "id": "commodity-dashboard",
     "title": "실시간 원자재 대시보드",
     "description": "야후 파이낸스(Yahoo Finance) 데이터를 활용하여 주요 원자재의 실시간 시세와 고급 기술적 지표를 시각화하는 동적 웹 애플리케이션입니다. (1분단위 갱신)",
+    "category": "App",
     "technologies": [
       "React",
       "TypeScript",
@@ -224,6 +232,7 @@
     "id": "2048",
     "title": "2048",
     "description": "클래식 2048 퍼즐 게임입니다",
+    "category": "기타",
     "technologies": [
       "React",
       "TypeScript"
@@ -243,6 +252,7 @@
     "id": "number-merge",
     "title": "넘버링크 (Number Merge)",
     "description": "플레이어가 번호가 적힌 블록을 떨어뜨려 더 높은 숫자로 합치는, 매력적이고 시각적으로 아름다운 퍼즐 게임입니다. 이 게임은 2048과 테트리스 같은 고전 게임의 전략적 요소를 결합했습니다.",
+    "category": "기타",
     "technologies": [
       "React",
       "TypeScript"
@@ -262,6 +272,7 @@
     "id": "number-merge",
     "title": "리퀴드 소트",
     "description": "플레이어는 색깔이 있는 액체를 올바른 시험관에 정렬해서 높은 점수를 얻는 게임입니다.",
+    "category": "기타",
     "technologies": [
       "React",
       "TypeScript"
@@ -278,9 +289,30 @@
     "geminiApiStatus": "none"
   },
   {
+    "id": "number-connect",
+    "title": "넘버 커넥트",
+    "description": "숫자를 연결하여 점수를 얻는 퍼즐 게임입니다. 인접한 동일한 숫자 타일부터 시작하여 연속으로 같거나 두 배 값의 타일을 연결해 점수를 획득하세요!",
+    "category": "기타",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://number-connect.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/number-connect",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
     "id": "candy-crush-saga",
     "title": "캔디 크러시 사가",
     "description": "'캔디 크러쉬 사가'를 웹 기술로 구현한 클론 프로젝트입니다. 사용자는 다채로운 캔디를 드래그 앤 드롭하여 3개 이상을 일치시켜 점수를 얻습니다. 현대적인 UI와 부드러운 애니메이션으로 즐거운 게임 경험을 제공하는 것을 목표로 합니다.",
+    "category": "기타",
     "technologies": [
       "React",
       "TypeScript"
@@ -298,8 +330,9 @@
   },
   {
     "id": "sand-blast",
-    "title": "샌트 블라스트",
+    "title": "샌드 블라스트",
     "description": "아래로 떨어지는 블록이 모래 입자로 부서지며, 플레이어는 같은 색상의 입자를 가로로 연결하여 라인을 클리어해야 합니다.",
+    "category": "기타",
     "technologies": [
       "React",
       "TypeScript"
@@ -314,5 +347,90 @@
       "Cursor"
     ],
     "geminiApiStatus": "none"
-  }
+  },
+  {
+    "id": "lightning-strike",
+    "title": "라이트닝 스트라이크",
+    "description": "화면을 클릭하여 번개를 소환하고, 화면에 나타나는 다양한 오브젝트를 파괴하는 아케이드 스타일의 웹 게임입니다. 에너지를 전략적으로 관리하고, 업그레이드를 통해 번개를 강화하며, 최대한 높은 점수를 획득하는 것이 목표입니다.",
+    "category": "기타",
+    "technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "liveUrl": "https://lightning-strike-gilt.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/lightning-strike",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "lstonks-9800",
+    "title": "트레이더: STONKS-9800",
+    "description": "스팀게임 STONKS-9800에서 영향을 받은 90년대 레트로 터미널 스타일의 주식 거래 시뮬레이션 게임입니다. 주식 매매, 공매도, 채권 거래, 조건부 주문 등 다양한 금융 거래를 시뮬레이션하며 포트폴리오를 관리하고 자산을 늘려나갈 수 있습니다. 또한 AI 트레이더들과 경쟁하며 실시간 시장 이벤트에 대응해야 합니다.",
+    "category": "경영",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts"
+    ],
+    "liveUrl": "https://stonks-9800.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/stonks-9800",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
+  {
+    "id": "core-video-editor",
+    "title": "코어 비디오 에디터 ",
+    "description": "로컬 비디오 파일을 타임라인 기반으로 편집하며, AI 기반의 고급 기능을 활용하여 창의적인 비디오 콘텐츠를 손쉽게 제작할 수 있습니다.",
+    "category": "App",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "WebCodecs API",
+      "mp4-muxer"
+    ],
+    "liveUrl": "https://core-video-editor.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/core-video-editor",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "optional"
+  },
+  {
+    "id": "",
+    "title": "GitHub 사용자 대시보드",
+    "description": "GitHub API를 활용하여 사용자의 프로필, 저장소, 프로젝트 정보를 시각적으로 보여주는 대화형 웹 대시보드입니다. 단일 사용자 정보를 깊이 있게 분석하거나, 두 사용자의 데이터를 나란히 비교하여 역량을 한눈에 파악할 수 있습니다.",
+    "category": "개발도구",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Recharts",
+      "GitHub API (v3)"
+    ],
+    "liveUrl": "https://github-board-swart.vercel.app/",
+    "featured": false,
+    "createdAt": "2025-",
+    "updatedAt": "2025-",
+    "githubUrl": "https://github.com/sigco3111/github-board",
+    "developmentTools": [
+      "Google AI Studio",
+      "Cursor"
+    ],
+    "geminiApiStatus": "none"
+  },
 ] 
