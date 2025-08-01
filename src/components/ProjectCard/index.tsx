@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortfolioItem } from '../../types/portfolio';
-import { formatSafeDate } from '../../utils/dateUtils';
 
 interface ProjectCardProps {
   project: PortfolioItem;
@@ -26,8 +25,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     viewCount = 0
   } = project;
 
-  // 날짜 포맷팅 함수 (유틸리티 함수 사용)
-  const formatDate = formatSafeDate;
+  // 날짜 포맷팅 함수 (직접 포맷팅으로 일관성 유지)
+  const formatDate = (dateString: string | undefined): string => {
+    if (!dateString) {
+      return '날짜 없음';
+    }
+    
+    try {
+      const date = new Date(dateString);
+      
+      // Invalid Date 체크
+      if (isNaN(date.getTime())) {
+        console.warn('Invalid date string:', dateString);
+        return '유효하지 않은 날짜';
+      }
+      
+      return date.toLocaleDateString('ko-KR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (error) {
+      console.error('Date formatting error:', error, 'for date:', dateString);
+      return '날짜 형식 오류';
+    }
+  };
 
   // 구글 드라이브 이미지 링크를 썸네일 URL로 변환하는 함수
   const getGoogleDriveThumbnailUrl = (url: string): string => {

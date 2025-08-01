@@ -4,11 +4,11 @@
 
 /**
  * 안전한 날짜 생성 함수
- * 미래 날짜인 경우 현재 날짜로 수정
+ * 유효하지 않은 날짜인 경우 현재 날짜로 수정
  */
 export const createSafeDate = (dateString?: string): string => {
   if (!dateString) {
-    return new Date('2025-01-17').toISOString(); // 현재 날짜로 설정
+    return new Date().toISOString(); // 현재 날짜로 설정
   }
   
   try {
@@ -17,22 +17,26 @@ export const createSafeDate = (dateString?: string): string => {
     // Invalid Date 체크
     if (isNaN(date.getTime())) {
       console.warn('Invalid date string:', dateString);
-      return new Date('2025-01-17').toISOString();
+      return new Date().toISOString();
     }
     
-    // 미래 날짜 체크 (2025년 이후)
-    if (date.getFullYear() > 2024) {
-      console.warn('Future date detected, adjusting:', dateString);
-      // 2025년을 2024년으로 변경
-      const adjustedDate = new Date(date);
-      adjustedDate.setFullYear(2024);
-      return adjustedDate.toISOString();
+    // 너무 미래의 날짜 체크 (현재 연도 + 10년 이후)
+    const currentYear = new Date().getFullYear();
+    if (date.getFullYear() > currentYear + 10) {
+      console.warn('Far future date detected, using current date:', dateString);
+      return new Date().toISOString();
+    }
+    
+    // 너무 과거의 날짜 체크 (1900년 이전)
+    if (date.getFullYear() < 1900) {
+      console.warn('Far past date detected, using current date:', dateString);
+      return new Date().toISOString();
     }
     
     return date.toISOString();
   } catch (error) {
     console.error('Date creation error:', error, 'for date:', dateString);
-    return new Date('2025-01-17').toISOString();
+    return new Date().toISOString();
   }
 };
 
@@ -76,7 +80,7 @@ export const getRelativeDate = (dateString: string | undefined): string => {
   try {
     const safeDate = createSafeDate(dateString);
     const date = new Date(safeDate);
-    const now = new Date('2025-01-17'); // 현재 날짜로 설정
+    const now = new Date(); // 실제 현재 날짜 사용
     
     const diffInMs = now.getTime() - date.getTime();
     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));

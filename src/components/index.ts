@@ -27,4 +27,7 @@ export { default as VisitorCounter } from './VisitorCounter';
 export { DashboardModal, StatCard } from './Dashboard';
 
 // 관리자 로그인 컴포넌트
-export { default as AdminLogin } from './AdminLogin'; 
+export { default as AdminLogin } from './AdminLogin';
+
+// 테마 토글 컴포넌트
+export { default as ThemeToggle } from './ThemeToggle'; 

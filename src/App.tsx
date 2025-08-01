@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import { ProjectModal } from './components';
 import { PortfolioItem } from './types/portfolio';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 /**
  * DevCanvas 메인 애플리케이션 컴포넌트
@@ -34,7 +35,7 @@ function App() {
   };
 
   return (
-    <>
+    <ThemeProvider>
       <Routes>
         {/* 홈페이지 경로 - 모달 핸들러 props 전달 */}
         <Route 
@@ -66,7 +67,7 @@ function App() {
         isOpen={isProjectModalOpen}
         onClose={closeProjectModal}
       />
-    </>
+    </ThemeProvider>
   );
 }
 

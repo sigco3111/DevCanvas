@@ -3,6 +3,7 @@ import type { HeaderProps, NavigationItem } from './types';
 import { useAuth } from '../../contexts/AuthContext';
 import { VisitorCounter } from '..';
 import { isAdminAuthenticated, onAdminAuthStateChange } from '../../services/adminAuthService';
+import ThemeToggle from '../ThemeToggle';
 
 /**
  * 기본 네비게이션 메뉴 항목들
@@ -202,6 +203,9 @@ const Header: React.FC<HeaderProps> = React.memo(({
             {/* 방문자 카운터 */}
             <VisitorCounter className="mr-4" />
             
+            {/* 테마 토글 버튼 */}
+            <ThemeToggle size="md" />
+            
             {/* 인증 UI */}
             <div className="flex items-center space-x-4">
               {isLoading ? (
@@ -285,6 +289,11 @@ const Header: React.FC<HeaderProps> = React.memo(({
               {/* 방문자 카운터 */}
               <div className="flex justify-center px-3 py-2 mb-2">
                 <VisitorCounter />
+              </div>
+              
+              {/* 모바일 테마 토글 */}
+              <div className="flex justify-center px-3 py-2 mb-2">
+                <ThemeToggle size="md" />
               </div>
               
               {dynamicNavigationItems.map((item) => (

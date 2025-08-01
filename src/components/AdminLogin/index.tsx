@@ -119,17 +119,17 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black bg-opacity-50 dark:bg-black dark:bg-opacity-70 flex items-center justify-center z-50"
       onKeyDown={handleKeyDown}
       tabIndex={-1}
     >
-      <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md mx-4">
         {/* 헤더 */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             관리자 로그인
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             관리자 권한이 필요한 페이지입니다
           </p>
         </div>
@@ -140,7 +140,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
           <div>
             <label 
               htmlFor="admin-id" 
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
             >
               관리자 ID
             </label>
@@ -150,7 +150,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
               type="text"
               value={formData.id}
               onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="관리자 ID를 입력하세요"
               disabled={isLoading}
               autoComplete="username"
@@ -162,7 +162,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
           <div>
             <label 
               htmlFor="admin-password" 
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
             >
               비밀번호
             </label>
@@ -173,7 +173,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
                 type={showPassword ? 'text' : 'password'}
                 value={formData.password}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 pr-10 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="비밀번호를 입력하세요"
                 disabled={isLoading}
                 autoComplete="current-password"
@@ -181,7 +181,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                 disabled={isLoading}
               >
                 {showPassword ? (
@@ -200,12 +200,12 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
 
           {/* 에러 메시지 */}
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-md p-3">
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md p-3">
               <div className="flex">
-                <svg className="h-5 w-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-red-400 dark:text-red-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <p className="text-sm text-red-700">{error}</p>
+                <p className="text-sm text-red-700 dark:text-red-300">{error}</p>
               </div>
             </div>
           )}
@@ -216,7 +216,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
               <button
                 type="button"
                 onClick={onCancel}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isLoading}
               >
                 취소
@@ -243,8 +243,8 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onAuthenticated, onCancel }) =>
         </form>
 
         {/* 보안 안내 */}
-        <div className="mt-6 pt-4 border-t border-gray-200">
-          <p className="text-xs text-gray-500 text-center">
+        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
             관리자 계정은 보안이 중요합니다. 
             <br />
             타인과 공유하지 마세요.
