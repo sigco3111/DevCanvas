@@ -138,17 +138,16 @@ export function verifyFilteringCompatibility(): boolean {
     // 최신순 정렬
     const sortBy = 'newest';
     const sortedResults = [...samplePortfolios].sort((a, b) => {
-      switch (sortBy) {
-        case 'newest':
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-        case 'oldest':
-          return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
-        case 'alphabetical':
-          return a.title.localeCompare(b.title);
-        case 'updated':
-          return new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime();
-        default:
-          return 0;
+      if (sortBy === 'newest') {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      } else if (sortBy === 'oldest') {
+        return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+      } else if (sortBy === 'alphabetical') {
+        return a.title.localeCompare(b.title);
+      } else if (sortBy === 'updated') {
+        return new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime();
+      } else {
+        return 0;
       }
     });
     
@@ -244,7 +243,7 @@ export function verifyHomePageFilteringLogic(portfolios: PortfolioItem[], filter
   selectedCategory: string;
   selectedGeminiFilters: string[];
   searchTerm: string;
-  sortBy: 'newest' | 'oldest' | 'alphabetical' | 'updated';
+  sortBy: string;
 }): PortfolioItem[] {
   
   const { selectedCategory, selectedGeminiFilters, searchTerm, sortBy } = filters;
@@ -279,17 +278,16 @@ export function verifyHomePageFilteringLogic(portfolios: PortfolioItem[], filter
     })
     .sort((a, b) => {
       // 정렬 로직
-      switch (sortBy) {
-        case 'newest':
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-        case 'oldest':
-          return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
-        case 'alphabetical':
-          return a.title.localeCompare(b.title);
-        case 'updated':
-          return new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime();
-        default:
-          return 0;
+      if (sortBy === 'newest') {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      } else if (sortBy === 'oldest') {
+        return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+      } else if (sortBy === 'alphabetical') {
+        return a.title.localeCompare(b.title);
+      } else if (sortBy === 'updated') {
+        return new Date(b.updatedAt || b.createdAt).getTime() - new Date(a.updatedAt || a.createdAt).getTime();
+      } else {
+        return 0;
       }
     });
     
