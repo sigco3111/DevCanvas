@@ -2,6 +2,8 @@
 
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string
+  readonly VITE_ADMIN_ID: string
+  readonly VITE_ADMIN_PW: string
   // 더 많은 환경 변수들을 여기에 추가할 수 있습니다
 }
 

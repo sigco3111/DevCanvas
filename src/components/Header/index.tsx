@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { HeaderProps, NavigationItem } from './types';
 import { useAuth } from '../../contexts/AuthContext';
 import { VisitorCounter } from '..';
+import { isAdminAuthenticated, onAdminAuthStateChange } from '../../services/adminAuthService';
 
 /**
  * 기본 네비게이션 메뉴 항목들
@@ -22,6 +23,21 @@ const DEFAULT_NAVIGATION: NavigationItem[] = [
 ];
 
 /**
+ * 관리자 네비게이션 항목
+ */
+const ADMIN_NAVIGATION_ITEM: NavigationItem = {
+  label: '관리자',
+  href: '/admin',
+  external: true, // 외부 링크로 처리하여 페이지 이동
+  icon: (
+    <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  )
+};
+
+/**
  * DevCanvas 웹사이트의 헤더 컴포넌트
  * 브랜딩, 네비게이션, 다크모드 토글 기능을 제공
  */
@@ -34,8 +50,36 @@ const Header: React.FC<HeaderProps> = React.memo(({
   // 모바일 메뉴 토글 상태 관리
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
+  // 관리자 인증 상태 관리 (요구사항 3.1, 3.3)
+  const [isAdminAuth, setIsAdminAuth] = useState(false);
+  
   // 인증 상태 및 함수들
   const { currentUser, isLoading, login, logout } = useAuth();
+
+  // 관리자 인증 상태 확인 및 리스너 등록
+  useEffect(() => {
+    // 초기 인증 상태 확인
+    setIsAdminAuth(isAdminAuthenticated());
+
+    // 인증 상태 변경 리스너 등록
+    const unsubscribe = onAdminAuthStateChange((authStatus) => {
+      setIsAdminAuth(authStatus);
+    });
+
+    return unsubscribe;
+  }, []);
+
+  // 동적 네비게이션 항목 생성 (관리자 인증 상태에 따라)
+  const dynamicNavigationItems = React.useMemo(() => {
+    const items = [...navigationItems];
+    
+    // 관리자가 인증된 경우 관리자 메뉴 추가 (요구사항 3.3)
+    if (isAdminAuth) {
+      items.push(ADMIN_NAVIGATION_ITEM);
+    }
+    
+    return items;
+  }, [navigationItems, isAdminAuth]);
 
   /**
    * 모바일 메뉴 토글 핸들러
@@ -51,6 +95,12 @@ const Header: React.FC<HeaderProps> = React.memo(({
   const handleNavigationClick = (href: string, external?: boolean) => {
     // 모바일 메뉴 닫기
     setIsMobileMenuOpen(false);
+
+    // 관리자 페이지 링크 처리 (요구사항 3.1, 3.3)
+    if (href === '/admin') {
+      window.location.href = href;
+      return;
+    }
 
     // 외부 콜백이 있으면 먼저 실행
     if (onNavigationClick) {
@@ -129,7 +179,7 @@ const Header: React.FC<HeaderProps> = React.memo(({
           {/* 데스크톱 네비게이션 */}
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex items-center space-x-8">
-              {navigationItems.map((item) => (
+              {dynamicNavigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -237,7 +287,7 @@ const Header: React.FC<HeaderProps> = React.memo(({
                 <VisitorCounter />
               </div>
               
-              {navigationItems.map((item) => (
+              {dynamicNavigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}

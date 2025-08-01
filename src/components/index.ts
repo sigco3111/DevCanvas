@@ -14,6 +14,9 @@ export type { HeroProps, CTAButton } from './Hero/types';
 // ProjectCard 컴포넌트
 export { default as ProjectCard } from './ProjectCard';
 
+// ProjectModal 컴포넌트
+export { default as ProjectModal } from './ProjectModal';
+
 // Pagination 컴포넌트
 export { default as Pagination } from './Pagination';
 
@@ -21,4 +24,7 @@ export { default as Pagination } from './Pagination';
 export { default as VisitorCounter } from './VisitorCounter';
 
 // 대시보드 컴포넌트
-export { DashboardModal, StatCard } from './Dashboard'; 
+export { DashboardModal, StatCard } from './Dashboard';
+
+// 관리자 로그인 컴포넌트
+export { default as AdminLogin } from './AdminLogin'; 

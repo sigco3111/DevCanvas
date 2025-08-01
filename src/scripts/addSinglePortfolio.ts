@@ -9,17 +9,17 @@ const addNewPortfolio = async () => {
   try {
     // 새 포트폴리오 데이터 정의 (새로운 카테고리 "실험" 추가 테스트)
     const newPortfolio: Omit<PortfolioItem, 'id'> = {
-      title: "MacOS8-BOARD",
-      description: "MacOS System8 스타일 게시판",
-      category: "App", // 새로운 카테고리 추가!
+      title: "캐피탈리즘 월드",
+      description: "고전게임 캐피탈리즘에서 영감을 받아 제작된, 시뮬레이션 게임입니다. 역동적인 세계 경제 속에서 지능적인 AI와 경쟁하며 자신만의 글로벌 기업 제국을 건설해 보세요.",
+      category: "경영", // 새로운 카테고리 추가!
       technologies: ["React", "TypeScript"],
-      liveUrl: "https://sys8-board.vercel.app/",
+      liveUrl: "https://capitalism-web.vercel.app/",
       featured: true, // 추천 프로젝트로 설정
-      createdAt: "2025-07-24",
-      updatedAt: "2025-07-24",
-      githubUrl: "https://github.com/sigco3111/sys8-board", // 선택사항
-      developmentTools: ["Cursor"], // 선택사항
-      geminiApiStatus: "required" // none, optional, required 중 선택
+      createdAt: "2025-08-01",
+      updatedAt: "2025-08-01",
+      githubUrl: "https://github.com/sigco3111/capitalism-web", // 선택사항
+      developmentTools: ["Google AI Studio", "Cursor"], // 선택사항
+      geminiApiStatus: "none" // none, optional, required 중 선택
     };
 
     console.log('🚀 새 포트폴리오 추가 시작...');

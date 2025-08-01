@@ -7,7 +7,11 @@
 export type {
   PortfolioCategory,
   PortfolioItem,
+  PortfolioItemSimplified,
   PortfolioFilterOptions,
+  AdminCredentials,
+  AdminSession,
+  ProjectStats,
 } from './portfolio';
 
 // Header 컴포넌트 관련 타입

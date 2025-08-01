@@ -67,6 +67,36 @@ export interface PortfolioItem {
   
   /** Gemini API Key 필요 상태 (기본값: 'none') */
   geminiApiStatus?: GeminiApiStatus;
+  
+  /** 댓글 수 */
+  commentCount: number;
+  
+  /** 조회수 */
+  viewCount: number;
+}
+
+/**
+ * 간소화된 포트폴리오 항목 인터페이스
+ * 프로젝트 카드에서 사용되는 필수 정보만 포함
+ */
+export interface PortfolioItemSimplified {
+  /** 고유 식별자 */
+  id: string;
+  
+  /** 프로젝트 제목 */
+  title: string;
+  
+  /** 프로젝트 이미지 URL (선택적) */
+  imageUrl?: string;
+  
+  /** 프로젝트 생성 날짜 */
+  createdAt: string;
+  
+  /** 댓글 수 */
+  commentCount: number;
+  
+  /** 조회수 */
+  viewCount: number;
 }
 
 /**
@@ -79,6 +109,45 @@ export interface PortfolioFilterOptions {
   
   /** 추천 프로젝트만 표시 여부 */
   featuredOnly: boolean;
+}
+
+/**
+ * 관리자 자격증명 인터페이스
+ */
+export interface AdminCredentials {
+  /** 관리자 ID */
+  id: string;
+  
+  /** 관리자 비밀번호 */
+  password: string;
+}
+
+/**
+ * 관리자 세션 인터페이스
+ */
+export interface AdminSession {
+  /** 인증 상태 */
+  isAuthenticated: boolean;
+  
+  /** 로그인 시간 */
+  loginTime: Date;
+  
+  /** 세션 만료 시간 */
+  expiresAt: Date;
+}
+
+/**
+ * 프로젝트 통계 인터페이스
+ */
+export interface ProjectStats {
+  /** 프로젝트 ID */
+  projectId: string;
+  
+  /** 조회수 */
+  viewCount: number;
+  
+  /** 마지막 조회 시간 */
+  lastViewed: Date;
 }
 
 /**
