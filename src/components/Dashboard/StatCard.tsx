@@ -23,7 +23,7 @@ const StatCard: React.FC<StatCardComponentProps> = ({
       onClick={onClick}
     >
       {/* 카드 헤더 */}
-      <div className="px-4 py-3 bg-gray-50 dark:bg-gray-750 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+      <div className="px-4 py-3 bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           {icon && <div className="text-blue-600 dark:text-blue-400">{icon}</div>}
           <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">

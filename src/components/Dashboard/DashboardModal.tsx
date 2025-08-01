@@ -6,6 +6,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { DashboardModalProps } from './types';
 import { StatCard } from './';
 import { DonutChart, BarChart, LineChart } from './charts';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const DashboardModal: React.FC<DashboardModalProps> = ({
   isOpen,
@@ -15,6 +16,10 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
   error = null,
   onRefresh
 }) => {
+  // 테마 상태 가져오기
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
+  
   // 모달 표시 여부에 따른 클래스 설정
   const modalClass = isOpen ? 'flex' : 'hidden';
   
@@ -283,6 +288,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                     value: item.count
                   }))}
                   height={300}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -295,6 +301,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                   }))}
                   dataKey="value"
                   height={250}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -308,6 +315,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                   dataKey="value"
                   height={250}
                   areaFill
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -326,7 +334,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                       {data.portfolio.recentProjects.map((project, index) => (
                         <tr 
                           key={project.id} 
-                          className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}
+                          className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'}
                         >
                           <td className="py-3 px-4 text-sm text-gray-900 dark:text-white">{project.title}</td>
                           <td className="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">{project.category}</td>
@@ -377,6 +385,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                     value: item.count
                   }))}
                   height={300}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -392,6 +401,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                   }))}
                   dataKey="value"
                   height={300}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -411,7 +421,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                         {data.tech.topTechnologies.map((tech, index) => (
                           <tr 
                             key={tech.name} 
-                            className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}
+                            className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'}
                           >
                             <td className="py-3 px-4 text-sm text-gray-900 dark:text-white">{tech.name}</td>
                             <td className="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">{tech.count}</td>
@@ -438,7 +448,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                         {data.tech.topDevelopmentTools.map((tool, index) => (
                           <tr 
                             key={tool.name} 
-                            className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}
+                            className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'}
                           >
                             <td className="py-3 px-4 text-sm text-gray-900 dark:text-white">{tool.name}</td>
                             <td className="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">{tool.count}</td>
@@ -465,7 +475,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                       {data.tech.technologiesPerProject.map((project, index) => (
                         <tr 
                           key={project.projectId} 
-                          className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}
+                          className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'}
                         >
                           <td className="py-3 px-4 text-sm text-gray-900 dark:text-white">{project.projectTitle}</td>
                           <td className="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">{project.techCount}</td>
@@ -515,6 +525,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                     value: item.count
                   }))}
                   height={300}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -528,6 +539,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                   dataKey="value"
                   height={250}
                   areaFill
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -547,7 +559,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                       {data.board.popularPosts.map((post, index) => (
                         <tr 
                           key={post.id} 
-                          className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}
+                          className={index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'}
                         >
                           <td className="py-3 px-4 text-sm text-gray-900 dark:text-white">{post.title}</td>
                           <td className="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">{post.authorName}</td>
@@ -600,6 +612,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                   }))}
                   dataKey="value"
                   height={250}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -612,6 +625,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                   }))}
                   dataKey="value"
                   height={250}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
               
@@ -630,6 +644,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
                     { dataKey: 'posts', name: '게시글', color: '#10B981' },
                     { dataKey: 'comments', name: '댓글', color: '#F59E0B' }
                   ]}
+                  isDarkMode={isDarkMode}
                 />
               </StatCard>
             </div>
@@ -637,7 +652,7 @@ const DashboardModal: React.FC<DashboardModalProps> = ({
         </div>
         
         {/* 모달 푸터 */}
-        <div className="px-6 py-3 bg-gray-50 dark:bg-gray-750 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
+        <div className="px-6 py-3 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600 flex items-center justify-between">
           <div className="text-xs text-gray-500 dark:text-gray-400">
             마지막 업데이트: {new Date(data.lastUpdated).toLocaleString()}
           </div>

@@ -115,12 +115,16 @@ const LineChart: React.FC<LineChartProps> = ({
   const customTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white dark:bg-gray-800 p-2 border border-gray-200 dark:border-gray-700 shadow-sm rounded text-sm">
-          <p className="font-medium text-gray-900 dark:text-white">{label}</p>
+        <div className={`p-2 border shadow-sm rounded text-sm ${
+          isDarkMode 
+            ? 'bg-gray-800 border-gray-600' 
+            : 'bg-white border-gray-200'
+        }`}>
+          <p className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{label}</p>
           {payload.map((entry: any, index: number) => (
             <p 
               key={`tooltip-${index}`}
-              className="text-gray-600 dark:text-gray-300"
+              className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}
               style={{ color: entry.color }}
             >
               {entry.name}: {entry.value}
@@ -192,7 +196,14 @@ const LineChart: React.FC<LineChartProps> = ({
           )}
           
           {/* 여러 시리즈가 있을 경우 범례 표시 */}
-          {series && series.length > 1 && <Legend />}
+          {series && series.length > 1 && (
+            <Legend 
+              wrapperStyle={{ 
+                color: isDarkMode ? '#D1D5DB' : '#4B5563',
+                fontSize: '12px'
+              }}
+            />
+          )}
         </RechartsLineChart>
       </ResponsiveContainer>
     </div>

@@ -73,9 +73,13 @@ const DonutChart: React.FC<DonutChartProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-white dark:bg-gray-800 p-2 border border-gray-200 dark:border-gray-700 shadow-sm rounded text-sm">
-          <p className="font-medium text-gray-900 dark:text-white">{data.name}</p>
-          <p className="text-gray-600 dark:text-gray-300">{data.value} ({data.percent}%)</p>
+        <div className={`p-2 border shadow-sm rounded text-sm ${
+          isDarkMode 
+            ? 'bg-gray-800 border-gray-600 text-white' 
+            : 'bg-white border-gray-200 text-gray-900'
+        }`}>
+          <p className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{data.name}</p>
+          <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{data.value} ({data.percent}%)</p>
         </div>
       );
     }
@@ -105,7 +109,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
               className="w-3 h-3 rounded-full mr-1" 
               style={{ backgroundColor: item.color || colors[index % colors.length] }}
             ></div>
-            <span className="text-xs text-gray-700 dark:text-gray-300">
+            <span className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
               {item.name} ({item.percent}%)
             </span>
           </div>
@@ -154,7 +158,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
                 y="50%"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="fill-gray-700 dark:fill-gray-300 text-sm font-medium"
+                className={`text-sm font-medium ${isDarkMode ? 'fill-gray-300' : 'fill-gray-700'}`}
               >
                 {innerLabel}
               </text>
