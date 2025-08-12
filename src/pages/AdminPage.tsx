@@ -601,7 +601,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">프로젝트 관리</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">프로젝트 관리</h2>
         <button
           onClick={onAdd}
           className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -614,14 +614,14 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
       </div>
 
       {/* 검색 및 정렬 컨트롤 */}
-      <div className="bg-white shadow rounded-lg mb-6">
+      <div className="bg-white dark:bg-gray-800 shadow rounded-lg mb-6">
         <div className="px-4 py-4 sm:px-6">
           <div className="flex flex-col sm:flex-row gap-4">
             {/* 검색 입력 */}
             <div className="flex-1">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-5 w-5 text-gray-400 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
@@ -630,7 +630,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                   placeholder="프로젝트 제목, 카테고리, 설명, 기술 스택으로 검색..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400"
                 />
               </div>
             </div>
@@ -640,7 +640,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md"
+                className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100"
               >
                 <option value="createdAt">생성일</option>
                 <option value="title">제목</option>
@@ -650,7 +650,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
               
               <button
                 onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-                className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 title={sortOrder === 'asc' ? '오름차순' : '내림차순'}
               >
                 {sortOrder === 'asc' ? (
@@ -667,7 +667,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
               <select
                 value={itemsPerPage}
                 onChange={(e) => setItemsPerPage(Number(e.target.value))}
-                className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md"
+                className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md bg-white text-gray-900 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-100"
                 title="페이지당 항목 수"
               >
                 <option value={5}>5개씩</option>
@@ -695,7 +695,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
 
           {/* 페이징 정보 */}
           {totalItems > 0 && (
-            <div className="mt-3 text-sm text-gray-600">
+            <div className="mt-3 text-sm text-gray-600 dark:text-gray-300">
               전체 {totalItems}개 중 {startIndex + 1}-{Math.min(endIndex, totalItems)}개 표시 
               {totalPages > 1 && ` (${currentPage}/${totalPages} 페이지)`}
             </div>
@@ -713,40 +713,40 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
       )}
 
       {/* 프로젝트 목록 */}
-      <div className="bg-white shadow rounded-lg" id="projects-table">
+      <div className="bg-white dark:bg-gray-800 shadow rounded-lg" id="projects-table">
         <div className="px-4 py-5 sm:p-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
+          <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-4">
             프로젝트 목록 ({filteredAndSortedProjects.length}개 / 전체 {portfolios.length}개)
           </h3>
           
           {loading ? (
             <div className="text-center py-8">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-              <p className="mt-2 text-gray-500">프로젝트를 불러오는 중...</p>
+              <p className="mt-2 text-gray-500 dark:text-gray-300">프로젝트를 불러오는 중...</p>
             </div>
           ) : filteredAndSortedProjects.length > 0 ? (
             <>
               <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
+                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                  <thead className="bg-gray-50 dark:bg-gray-700">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         프로젝트
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         카테고리
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         통계
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         작업
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
+                  <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                     {currentPageProjects.map((project) => (
-                    <tr key={project.id} className="hover:bg-gray-50">
+                    <tr key={project.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 h-10 w-10">
@@ -762,7 +762,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                                 }}
                               />
                             ) : (
-                              <div className="h-10 w-10 rounded-lg bg-gray-200 flex items-center justify-center">
+                              <div className="h-10 w-10 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                                 <svg className="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
@@ -786,7 +786,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                           {project.category}
                         </span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                         <div className="flex space-x-4">
                           <span>조회 {project.viewCount}</span>
                           <span>댓글 {project.commentCount}</span>
@@ -816,7 +816,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
 
             {/* 페이징 컨트롤 */}
             {totalPages > 1 && (
-              <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+              <div className="bg-white dark:bg-gray-800 px-4 py-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-700 sm:px-6">
                 <div className="flex-1 flex justify-between sm:hidden">
                   {/* 모바일 페이징 */}
                   <button
@@ -824,8 +824,8 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                     disabled={currentPage === 1}
                     className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${
                       currentPage === 1
-                        ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
-                        : 'text-gray-700 bg-white hover:bg-gray-50'
+                        ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed'
+                        : 'text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700'
                     }`}
                   >
                     이전
@@ -835,8 +835,8 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                     disabled={currentPage === totalPages}
                     className={`ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${
                       currentPage === totalPages
-                        ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
-                        : 'text-gray-700 bg-white hover:bg-gray-50'
+                        ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed'
+                        : 'text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700'
                     }`}
                   >
                     다음
@@ -844,7 +844,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                 </div>
                 <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
                   <div>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
                       전체 <span className="font-medium">{totalItems}</span>개 중{' '}
                       <span className="font-medium">{startIndex + 1}</span>-
                       <span className="font-medium">{Math.min(endIndex, totalItems)}</span>개 표시
@@ -858,8 +858,8 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                         disabled={currentPage === 1}
                         className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 text-sm font-medium ${
                           currentPage === 1
-                            ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
-                            : 'text-gray-500 bg-white hover:bg-gray-50'
+                            ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed'
+                            : 'text-gray-500 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                       >
                         <span className="sr-only">이전</span>
@@ -882,7 +882,7 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                             return (
                               <span
                                 key={page}
-                                className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"
+                                className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300"
                               >
                                 ...
                               </span>
@@ -912,8 +912,8 @@ const ProjectManagement: React.FC<ProjectManagementProps> = ({
                         disabled={currentPage === totalPages}
                         className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 text-sm font-medium ${
                           currentPage === totalPages
-                            ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
-                            : 'text-gray-500 bg-white hover:bg-gray-50'
+                            ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed'
+                            : 'text-gray-500 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                       >
                         <span className="sr-only">다음</span>
@@ -1015,16 +1015,16 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
   };
 
   return (
-    <div className="bg-white shadow rounded-lg mb-6">
+    <div className="bg-white dark:bg-gray-800 shadow rounded-lg mb-6">
       <div className="px-4 py-5 sm:p-6">
-        <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
+        <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-4">
           {project ? '프로젝트 수정' : '새 프로젝트 추가'}
         </h3>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 제목 *
               </label>
               <input
@@ -1034,12 +1034,12 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 required
                 value={formData.title}
                 onChange={handleChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               />
             </div>
             
             <div>
-              <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 카테고리 *
               </label>
               <input
@@ -1049,13 +1049,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 required
                 value={formData.category}
                 onChange={handleChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               설명 *
             </label>
             <textarea
@@ -1065,13 +1065,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
               rows={3}
               value={formData.description}
               onChange={handleChange}
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="technologies" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="technologies" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 기술 스택 (쉼표로 구분)
               </label>
               <input
@@ -1081,12 +1081,12 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 value={formData.technologies}
                 onChange={handleChange}
                 placeholder="React, TypeScript, Firebase"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               />
             </div>
             
             <div>
-              <label htmlFor="developmentTools" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="developmentTools" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 개발 도구 (쉼표로 구분)
               </label>
               <input
@@ -1096,14 +1096,14 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 value={formData.developmentTools}
                 onChange={handleChange}
                 placeholder="VS Code, Figma, Git"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="liveUrl" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="liveUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 라이브 URL
               </label>
               <input
@@ -1113,12 +1113,12 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 value={formData.liveUrl}
                 onChange={handleChange}
                 placeholder="https://example.com 또는 local"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               />
             </div>
             
             <div>
-              <label htmlFor="githubUrl" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="githubUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 GitHub URL
               </label>
               <input
@@ -1127,13 +1127,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 id="githubUrl"
                 value={formData.githubUrl}
                 onChange={handleChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               이미지 URL
             </label>
             <input
@@ -1142,14 +1142,14 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
               id="imageUrl"
               value={formData.imageUrl}
               onChange={handleChange}
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400"
               placeholder="프로젝트 이미지 URL을 입력하세요 (선택사항)"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="geminiApiStatus" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="geminiApiStatus" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Gemini API 상태
               </label>
               <select
@@ -1157,7 +1157,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 id="geminiApiStatus"
                 value={formData.geminiApiStatus}
                 onChange={handleChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 dark:bg-gray-700 dark:text-gray-100"
               >
                 <option value="none">필요없음</option>
                 <option value="optional">선택</option>
