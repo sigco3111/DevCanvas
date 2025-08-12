@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { PortfolioItem } from '../../types/portfolio';
 
 interface ProjectModalProps {
@@ -14,6 +14,7 @@ interface ProjectModalProps {
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const [isLocalInfoOpen, setIsLocalInfoOpen] = useState(false);
 
   // 구글 드라이브 이미지 링크를 썸네일 URL로 변환하는 함수
   const getGoogleDriveThumbnailUrl = (url: string): string => {
@@ -111,6 +112,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
   if (!isOpen || !project) {
     return null;
   }
+
+  // 라이브 URL 존재 여부 체크 (공백 문자열 포함 비존재로 처리)
+  const hasLiveUrl = typeof project.liveUrl === 'string' && project.liveUrl.trim().length > 0;
+  // 라이브 URL이 'local'인 경우(대소문자 무시) 로컬 실행 안내 모달로 처리
+  const isLocalLive = hasLiveUrl && project.liveUrl!.trim().toLowerCase() === 'local';
 
   return (
     <div
@@ -219,7 +225,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             <div className="mb-6">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">링크</h4>
               <div className="flex flex-wrap gap-3">
-                {project.liveUrl && (
+                {/* 앱 실행: 라이브 URL이 있으면 새 탭으로, 없으면 안내 모달 표시 */}
+                {hasLiveUrl && !isLocalLive ? (
                   <a
                     href={project.liveUrl}
                     target="_blank"
@@ -232,6 +239,18 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                     </svg>
                     앱 실행
                   </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setIsLocalInfoOpen(true)}
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors text-sm font-medium"
+                    aria-label="앱 실행 안내 보기"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    앱 실행
+                  </button>
                 )}
                 
                 {project.githubUrl && (
@@ -385,6 +404,46 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </div>
         </div>
       </div>
+      {/* 라이브 URL이 없을 때 표시되는 안내 모달 */}
+      {isLocalInfoOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center" role="dialog" aria-modal="true">
+          <div className="fixed inset-0 bg-black bg-opacity-40" onClick={() => setIsLocalInfoOpen(false)} />
+          <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+            <div className="flex items-start justify-between mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">안내</h3>
+              <button
+                onClick={() => setIsLocalInfoOpen(false)}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                aria-label="안내 모달 닫기"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">로컬에서 실행가능한 프로젝트 입니다.</p>
+            <div className="flex justify-end gap-2">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-3 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-md text-sm hover:bg-gray-900 dark:hover:bg-gray-600"
+                >
+                  GitHub 열기
+                </a>
+              )}
+              <button
+                type="button"
+                onClick={() => setIsLocalInfoOpen(false)}
+                className="inline-flex items-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

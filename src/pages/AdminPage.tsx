@@ -77,8 +77,13 @@ const AdminDashboard: React.FC = () => {
   const handleSaveProject = async (projectData: Partial<PortfolioItem>) => {
     try {
       if (editingProject) {
+        // 방어: Firestore 문서 ID가 비어있는 경우 대비
+        const targetId = (editingProject.id || '').trim();
+        if (!targetId) {
+          throw new Error('유효하지 않은 프로젝트 ID입니다. 다시 시도하세요.');
+        }
         // 수정
-        await updatePortfolio(editingProject.id, projectData);
+        await updatePortfolio(targetId, projectData);
         alert('프로젝트가 성공적으로 수정되었습니다.');
       } else {
         // 추가
@@ -978,12 +983,20 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // 라이브 URL 정규화: 공백 -> undefined, 'local' (대소문자 무시) -> 'local', 그 외는 트림
+    const normalizeLiveUrl = (value: string): string | undefined => {
+      const trimmed = (value || '').trim();
+      if (!trimmed) return undefined;
+      if (trimmed.toLowerCase() === 'local') return 'local';
+      return trimmed;
+    };
+
     const projectData: Partial<PortfolioItem> = {
       title: formData.title,
       description: formData.description,
       category: formData.category,
       technologies: formData.technologies.split(',').map(t => t.trim()).filter(t => t),
-      liveUrl: formData.liveUrl || undefined,
+      liveUrl: normalizeLiveUrl(formData.liveUrl),
       githubUrl: formData.githubUrl || undefined,
       imageUrl: formData.imageUrl || undefined,
       developmentTools: formData.developmentTools.split(',').map(t => t.trim()).filter(t => t),
@@ -1094,11 +1107,12 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel }) 
                 라이브 URL
               </label>
               <input
-                type="url"
+                type="text"
                 name="liveUrl"
                 id="liveUrl"
                 value={formData.liveUrl}
                 onChange={handleChange}
+                placeholder="https://example.com 또는 local"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
               />
             </div>

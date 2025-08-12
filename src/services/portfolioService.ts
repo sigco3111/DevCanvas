@@ -9,7 +9,8 @@ import {
   query,
   orderBy,
   where,
-  increment
+  increment,
+  deleteField
 } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { PortfolioItem, PortfolioItemSimplified } from '../types/portfolio';
@@ -47,14 +48,15 @@ export const getPortfolios = async (): Promise<PortfolioItem[]> => {
       }
       
       portfolios.push({
-        id: doc.id,
         ...data,
         // Firebase Timestamp를 문자열로 변환
         createdAt,
         updatedAt,
         // 통계 데이터 기본값 설정 (요구사항 4.3: 응답에 조회수와 댓글 수 포함)
         viewCount: data.viewCount || 0,
-        commentCount: data.commentCount || 0
+        commentCount: data.commentCount || 0,
+        // 항상 Firestore 문서 ID로 덮어써서 레거시 data.id를 무력화
+        id: doc.id,
       } as PortfolioItem);
     });
     
@@ -80,14 +82,14 @@ export const getPortfolioById = async (id: string): Promise<PortfolioItem | null
       const data = docSnap.data();
       console.log(`✅ 포트폴리오 데이터 가져오기 완료: ${data.title}`);
       return {
-        id: docSnap.id,
         ...data,
         // Firebase Timestamp를 문자열로 변환
         createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt || new Date().toISOString(),
         updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt || data.createdAt?.toDate?.()?.toISOString() || new Date().toISOString(),
         // 통계 데이터 기본값 설정 (요구사항 4.3: 응답에 조회수와 댓글 수 포함)
         viewCount: data.viewCount || 0,
-        commentCount: data.commentCount || 0
+        commentCount: data.commentCount || 0,
+        id: docSnap.id,
       } as PortfolioItem;
     } else {
       console.log('❌ 해당 ID의 포트폴리오를 찾을 수 없습니다.');
@@ -107,13 +109,46 @@ export const addPortfolio = async (portfolio: Omit<PortfolioItem, 'id'>): Promis
     console.log('📱 새 포트폴리오 추가 중...', portfolio.title);
     
     const portfoliosRef = collection(db, PORTFOLIOS_COLLECTION);
+    // 빈 문자열 선택 필드 제거 유틸
+    const trimOrOmit = <T extends Record<string, unknown>>(obj: T, keys: Array<keyof T>): T => {
+      const result: Record<string, unknown> = { ...obj };
+      keys.forEach((key) => {
+        const val = result[key];
+        // undefined는 문서에 저장하지 않도록 제거
+        if (val === undefined) {
+          delete result[key];
+          return;
+        }
+        if (typeof val === 'string') {
+          const trimmed = (val as string).trim();
+          if (trimmed.length === 0) {
+            delete result[key];
+          } else {
+            result[key] = trimmed;
+          }
+        }
+      });
+      return result as T;
+    };
+
+    let cleaned = trimOrOmit(portfolio, ['liveUrl', 'githubUrl', 'imageUrl'] as any);
+    if ((cleaned as any).liveUrl && typeof (cleaned as any).liveUrl === 'string') {
+      const lv = ((cleaned as any).liveUrl as string).trim();
+      (cleaned as any).liveUrl = lv.toLowerCase() === 'local' ? 'local' : lv;
+    }
+
+    // 필수 아닌 불리언/숫자 기본값 보정
+    if ((cleaned as any).featured === undefined) (cleaned as any).featured = false;
+    if ((cleaned as any).viewCount === undefined) (cleaned as any).viewCount = 0;
+    if ((cleaned as any).commentCount === undefined) (cleaned as any).commentCount = 0;
+
     const docRef = await addDoc(portfoliosRef, {
-      ...portfolio,
-      createdAt: portfolio.createdAt || new Date().toISOString(),
+      ...cleaned,
+      createdAt: (cleaned as any).createdAt || new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       // 새 포트폴리오의 통계 데이터 초기화
-      viewCount: portfolio.viewCount || 0,
-      commentCount: portfolio.commentCount || 0
+      viewCount: (cleaned as any).viewCount,
+      commentCount: (cleaned as any).commentCount
     });
     
     console.log(`✅ 포트폴리오 추가 완료: ${portfolio.title} (ID: ${docRef.id})`);
@@ -131,15 +166,65 @@ export const updatePortfolio = async (id: string, updates: Partial<PortfolioItem
   try {
     console.log(`📱 포트폴리오 업데이트 중... ID: ${id}`);
     
+    // ID 유효성 검증: 빈 문자열/공백/undefined 방지
+    if (typeof id !== 'string' || id.trim().length === 0) {
+      throw new Error('유효하지 않은 프로젝트 ID입니다. 다시 시도해주세요.');
+    }
+
     const docRef = doc(db, PORTFOLIOS_COLLECTION, id);
-    await updateDoc(docRef, {
-      ...updates,
-      updatedAt: new Date().toISOString()
+    // 업데이트 페이로드 구성: 공란 입력 시 해당 필드 삭제 처리
+    const payload: Record<string, unknown> = { updatedAt: new Date().toISOString() };
+    const deletePayload: Record<string, unknown> = {};
+
+    // 기타 일반 필드 복사 (문자열 트림)
+    Object.entries(updates).forEach(([k, v]) => {
+      if (k === 'liveUrl' || k === 'githubUrl' || k === 'imageUrl') return; // 아래에서 별도 처리
+      if (typeof v === 'string') {
+        payload[k] = v.trim();
+      } else if (v !== undefined) {
+        payload[k] = v;
+      }
     });
+
+    // 선택 필드 처리: 빈 문자열 -> deleteField(), 비어있지 않으면 트림 후 설정, undefined면 변경 없음
+    if ('liveUrl' in updates) {
+      const v = updates.liveUrl;
+      if (v === undefined) deletePayload['liveUrl'] = deleteField();
+      else if (typeof v === 'string' && v.trim().length === 0) deletePayload['liveUrl'] = deleteField();
+      else if (typeof v === 'string') {
+        const trimmed = v.trim();
+        payload['liveUrl'] = trimmed.toLowerCase() === 'local' ? 'local' : trimmed;
+      }
+    }
+    if ('githubUrl' in updates) {
+      const v = updates.githubUrl;
+      if (v === undefined) deletePayload['githubUrl'] = deleteField();
+      else if (typeof v === 'string' && v.trim().length === 0) deletePayload['githubUrl'] = deleteField();
+      else if (typeof v === 'string') payload['githubUrl'] = v.trim();
+    }
+    if ('imageUrl' in updates) {
+      const v = updates.imageUrl;
+      if (v === undefined) deletePayload['imageUrl'] = deleteField();
+      else if (typeof v === 'string' && v.trim().length === 0) deletePayload['imageUrl'] = deleteField();
+      else if (typeof v === 'string') payload['imageUrl'] = v.trim();
+    }
+
+    // 1) 삭제 먼저 처리
+    if (Object.keys(deletePayload).length > 0) {
+      console.log('🧹 deletePayload:', deletePayload);
+      await updateDoc(docRef, deletePayload);
+    }
+    // 2) 일반 업데이트 처리
+    console.log('✏️ update payload:', payload);
+    await updateDoc(docRef, payload);
     
     console.log(`✅ 포트폴리오 업데이트 완료: ID ${id}`);
-  } catch (error) {
-    console.error('❌ 포트폴리오 업데이트 실패:', error);
+  } catch (error: any) {
+    console.error('❌ 포트폴리오 업데이트 실패:', {
+      name: error?.name,
+      code: error?.code,
+      message: error?.message,
+    });
     throw new Error('포트폴리오를 업데이트할 수 없습니다.');
   }
 };
@@ -176,18 +261,18 @@ export const getPortfoliosByCategory = async (category: string): Promise<Portfol
     );
     const querySnapshot = await getDocs(portfoliosQuery);
     
-    const portfolios: PortfolioItem[] = [];
+      const portfolios: PortfolioItem[] = [];
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       portfolios.push({
-        id: doc.id,
         ...data,
         // Firebase Timestamp를 문자열로 변환
         createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt || new Date().toISOString(),
         updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt || data.createdAt?.toDate?.()?.toISOString() || new Date().toISOString(),
         // 통계 데이터 기본값 설정 (요구사항 4.3: 응답에 조회수와 댓글 수 포함)
         viewCount: data.viewCount || 0,
-        commentCount: data.commentCount || 0
+        commentCount: data.commentCount || 0,
+        id: doc.id,
       } as PortfolioItem);
     });
     
@@ -218,14 +303,14 @@ export const getFeaturedPortfolios = async (): Promise<PortfolioItem[]> => {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       portfolios.push({
-        id: doc.id,
         ...data,
         // Firebase Timestamp를 문자열로 변환
         createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt || new Date().toISOString(),
         updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt || data.createdAt?.toDate?.()?.toISOString() || new Date().toISOString(),
         // 통계 데이터 기본값 설정 (요구사항 4.3: 응답에 조회수와 댓글 수 포함)
         viewCount: data.viewCount || 0,
-        commentCount: data.commentCount || 0
+        commentCount: data.commentCount || 0,
+        id: doc.id,
       } as PortfolioItem);
     });
     
