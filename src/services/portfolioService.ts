@@ -15,6 +15,15 @@ import {
 import { db } from '../lib/firebase';
 import { PortfolioItem, PortfolioItemSimplified } from '../types/portfolio';
 
+// Firebase 비활성화 시 가드 헬퍼 (71b 함정: 키 누락 시 throw 방지)
+const requireDb = () => {
+  if (!db) {
+    console.warn('⚠️ Firebase 비활성화 상태 — Firestore 쿼리 스킵');
+    throw new Error('Firebase not configured');
+  }
+  return db;
+};
+
 // Firebase 컬렉션 상수
 const PORTFOLIOS_COLLECTION = 'portfolios';
 

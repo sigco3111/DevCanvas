@@ -7,6 +7,15 @@ import {
 } from 'firebase/auth';
 import { auth } from '../lib/firebase';
 
+// Firebase 비활성화 시 가드 헬퍼 (71b 함정: 키 누락 시 throw 방지)
+const requireAuth = () => {
+  if (!auth) {
+    console.warn('⚠️ Firebase 비활성화 상태 — 인증 스킵');
+    throw new Error('Firebase not configured');
+  }
+  return auth;
+};
+
 /**
  * Google 로그인 제공자 설정
  */

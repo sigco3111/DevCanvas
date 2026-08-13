@@ -4,12 +4,16 @@
 
 **기술 스택:** React, Redux, TypeScript, Business Simulation
 
+Live Demo : https://devcanvas-two.vercel.app/
+
+[![Live](https://img.shields.io/badge/Live-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://devcanvas-two.vercel.app/)
+
 ## 🚀 기술 스택
 
 - **Frontend:** React 18.3.1, TypeScript 5.7.2
 - **Styling:** Tailwind CSS 3.4.17, PostCSS 8.5.1
 - **Build Tool:** Vite 6.0.7
-- **Deployment:** Vercel
+- **Deployment:** Vercel (SPA rewrites via `vercel.json`, 환경변수 6개 등록됨 — Firebase Web SDK)
 - **Linting:** ESLint 9.17.0
 - **Dependencies:**
   - react-dom: 18.3.1
@@ -107,6 +111,22 @@ MIT License
 ## 💬 문의하기
 
 질문이나 제안이 있으시면 GitHub 이슈를 통해 문의해주세요.
+
+---
+
+## 📦 호스팅 메모 (2026-08-13)
+
+- **Vercel 프로젝트**: `sigco3111s-projects/devcanvas` (projectId: `prj_ArmJHwRnguUsAZKf3pcvaP9Dumtr`)
+- **라이브 데모**: `https://devcanvas-two.vercel.app/` (alias 재바인딩 API로 갱신됨)
+- **빌드 워크플로**: `npx vite build` (Firebase 키 `.env`에서 import.meta.env로 박힘) → `cp -R dist/* .vercel/output/static/` (Vercel 빌드 우회) → `vercel deploy --prebuilt --prod`
+- **Firebase 환경변수 (Vercel Production)**:
+  - `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`
+  - `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID`
+- **Firebase Console 작업 필요** (배포 후):
+  1. Firestore → Rules: `allow read, write: if true;` (개발용 임시 — 프로덕션은 인증된 사용자만)
+  2. Authentication → Settings → Authorized domains: `devcanvas-two.vercel.app` 추가
+- **`vercel.json` 보존**: SPA rewrites (`/(.*)` → `/index.html`) — React Router 라우팅용. `framework` 필드 제거 (Vercel 자동 SPA rewrites 함정 회피)
+- **이전 라이브 (`devcanvas.vercel.app`)**: 다른 팀의 프로젝트 — 본 repo와 무관. 본 repo 라이브는 `devcanvas-two.vercel.app`
 
 ---
 
